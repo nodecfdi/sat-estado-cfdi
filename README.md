@@ -38,7 +38,7 @@ yarn add @nodecfdi/sat-estado-cfdi
 ## Ejemplo básico de uso
 
 ```ts
-import { ConsumerClientInterface } from '@nodecfdi/sat-estado-cfdi';
+import { ConsumerClientInterface, Consumer } from '@nodecfdi/sat-estado-cfdi';
 
 //el cliente debe implementar ConsumerClientInterface
 const client = Client()
@@ -46,7 +46,7 @@ const consumer = new Consumer(client);
 
 const cfdiStatus = consumer.execute('...expression');
 
-if (cfdiStatus.getCancellable().isNotCancellable()) {
+if (cfdiStatus.getCancellable().notCancellable()) {
     console.log('CFDI no es cancelable');
 }
 ```
