@@ -1,9 +1,12 @@
 {
-  "name": "@nodecfdi/nodets-lib-template",
+  "name": "@nodecfdi/sat-estado-cfdi",
   "version": "1.0.0",
-  "description": "",
+  "description": "Consulta el estado de un cfdi en el webservice del SAT",
   "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "files": [
+    "dist",
+    "src"
+  ],
   "scripts": {
     "lint": "eslint src/**/*.ts",
     "format": "eslint src/**/*.ts --fix",
@@ -12,18 +15,34 @@
     "test": "jest",
     "coverage": "jest --coverage"
   },
-  "keywords": [],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nodecfdi/sat-estado-cfdi.git"
+  },
+  "keywords": [
+    "SAT",
+    "estado",
+    "consulta",
+    "cfdi",
+    "servicio"
+  ],
   "author": "OcelotlStudio <contacto@ocelotlstudio.com>",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nodecfdi/sat-estado-cfdi/issues"
+  },
+  "homepage": "https://github.com/nodecfdi/sat-estado-cfdi#readme",
   "devDependencies": {
     "@commitlint/cli": "^12.1.4",
     "@commitlint/config-conventional": "^12.1.4",
     "@types/jest": "^26.0.23",
-    "@typescript-eslint/eslint-plugin": "^4.27.0",
-    "@typescript-eslint/parser": "^4.27.0",
-    "eslint": "^7.28.0",
+    "@typescript-eslint/eslint-plugin": "^4.28.0",
+    "@typescript-eslint/parser": "^4.28.0",
+    "eslint": "^7.29.0",
+    "eslint-config-prettier": "^8.3.0",
     "husky": "^6.0.0",
-    "jest": "^27.0.4",
+    "jest": "^27.0.5",
+    "jest-extended": "^0.11.5",
     "prettier": "^2.3.1",
     "ts-jest": "^27.0.3",
     "typescript": "^4.3.4"
