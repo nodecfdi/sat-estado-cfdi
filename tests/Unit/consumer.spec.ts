@@ -1,10 +1,5 @@
 import { FakeConsumerClient } from '../fakeConsumerClient';
 import { Consumer } from '../../src/consumer';
-import { QueryStatus } from '../../src/Status/queryStatus';
-import { DocumentStatus } from '../../src/Status/documentStatus';
-import { CancellableStatus } from '../../src/Status/cancellableStatus';
-import { CancellationStatus } from '../../src/Status/cancellationStatus';
-
 describe('Consumer test', () => {
   it('Has Same Factory And Uri As Constructed', () => {
     const client = new FakeConsumerClient({ '': '' });

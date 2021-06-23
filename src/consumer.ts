@@ -1,6 +1,6 @@
-import { CfdiStatus } from "./cfdiStatus";
-import { ConsumerClientInterface } from "./Contracts/consumerClient";
-import { CfdiStatusBuilder } from "./Utils/cfdiStatusBuilder";
+import { CfdiStatus } from './cfdiStatus';
+import { ConsumerClientInterface } from './Contracts/consumerClient';
+import { CfdiStatusBuilder } from './Utils/cfdiStatusBuilder';
 
 export class Consumer {
     static readonly  WEBSERVICE_URI_PRODUCTION = 'https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc';
