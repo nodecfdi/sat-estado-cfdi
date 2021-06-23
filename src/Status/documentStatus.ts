@@ -17,7 +17,7 @@ class DocumentStatus {
     return this.current === DocumentStatus.status.notFound;
   }
 }
-
+// eslint-disable-next-line @typescript-eslint/no-namespace
 namespace DocumentStatus {
   export enum status {
     canceled,

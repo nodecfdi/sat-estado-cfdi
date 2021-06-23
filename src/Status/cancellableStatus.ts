@@ -25,6 +25,7 @@ class CancellableStatus {
   }
 }
 
+// eslint-disable-next-line @typescript-eslint/no-namespace
 namespace CancellableStatus {
   export enum status {
     cancellableByDirectCall,

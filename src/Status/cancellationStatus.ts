@@ -43,7 +43,7 @@ class CancellationStatus {
     return this.current === CancellationStatus.status.cancelledByDirectCall;
   }
 }
-
+// eslint-disable-next-line @typescript-eslint/no-namespace
 namespace CancellationStatus {
   export enum status {
     undefined,

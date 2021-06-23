@@ -45,7 +45,7 @@ export class CfdiStatusBuilder {
 
   public createQueryStatus(): QueryStatus.status {
     // S - Comprobante obtenido satisfactoriamente
-    const check = this.codigoEstatus.match('S - ');
+    const check = /S - /.exec(this.codigoEstatus);
     if (check && check[0]) {
       return QueryStatus.status.found;
     }

@@ -1,6 +1,4 @@
-
 class QueryStatus {
-
   private current: QueryStatus.status.found | QueryStatus.status.notFound;
 
   constructor(status: QueryStatus.status.found | QueryStatus.status.notFound) {
@@ -15,7 +13,7 @@ class QueryStatus {
     return this.current == QueryStatus.status.notFound;
   }
 }
-
+// eslint-disable-next-line @typescript-eslint/no-namespace
 namespace QueryStatus {
   export enum status {
     found,

@@ -13,7 +13,7 @@ class EfosStatus {
     return this.current === EfosStatus.status.excluded;
   }
 }
-
+// eslint-disable-next-line @typescript-eslint/no-namespace
 namespace EfosStatus {
   export enum status {
     included,
