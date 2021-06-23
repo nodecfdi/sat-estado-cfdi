@@ -1,8 +1,8 @@
-import { ConsumerClientResponseInterface } from "../Contracts/consumerClientResponse";
+import { ConsumerClientResponseInterface } from '../Contracts/consumerClientResponse';
 
 export class ConsumerClientResponse implements ConsumerClientResponseInterface {
 
-    private map: Record<string, string>;
+    private map!: Record<string, string>;
 
     public set(input: Record<string, string>): void
     {

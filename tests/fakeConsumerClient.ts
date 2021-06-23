@@ -4,7 +4,7 @@ import { ConsumerClientResponse } from '../src/Utils/consumerClientResponse';
 
 export class FakeConsumerClient implements ConsumerClientInterface {
 
-    private consumeResponse: ConsumerClientResponseInterface;
+    private consumeResponse!: ConsumerClientResponseInterface;
 
     public lastUri: string = '';
 
