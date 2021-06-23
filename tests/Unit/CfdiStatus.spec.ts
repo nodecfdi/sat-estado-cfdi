@@ -1,9 +1,9 @@
-import { CfdiStatus } from '../../src/cfdiStatus';
-import { CancellableStatus } from '../../src/Status/cancellableStatus';
-import { CancellationStatus } from '../../src/Status/cancellationStatus';
-import { DocumentStatus } from '../../src/Status/documentStatus';
-import { EfosStatus } from '../../src/Status/efosStatus';
-import { QueryStatus } from '../../src/Status/queryStatus';
+import { CfdiStatus } from '../../src/CfdiStatus';
+import { CancellableStatus } from '../../src/Status/CancellableStatus';
+import { CancellationStatus } from '../../src/Status/CancellationStatus';
+import { DocumentStatus } from '../../src/Status/DocumentStatus';
+import { EfosStatus } from '../../src/Status/EfosStatus';
+import { QueryStatus } from '../../src/Status/QueryStatus';
 
 describe('Cfdi status sat', () => {
   it('Object Return Correct Properties', () => {

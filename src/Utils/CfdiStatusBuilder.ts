@@ -1,9 +1,9 @@
-import { CfdiStatus } from '../cfdiStatus';
-import { CancellableStatus } from '../Status/cancellableStatus';
-import { CancellationStatus } from '../Status/cancellationStatus';
-import { DocumentStatus } from '../Status/documentStatus';
-import { EfosStatus } from '../Status/efosStatus';
-import { QueryStatus } from '../Status/queryStatus';
+import { CfdiStatus } from '../CfdiStatus';
+import { CancellableStatus } from '../Status/CancellableStatus';
+import { CancellationStatus } from '../Status/CancellationStatus';
+import { DocumentStatus } from '../Status/DocumentStatus';
+import { EfosStatus } from '../Status/EfosStatus';
+import { QueryStatus } from '../Status/QueryStatus';
 
 export class CfdiStatusBuilder {
   private codigoEstatus: string;

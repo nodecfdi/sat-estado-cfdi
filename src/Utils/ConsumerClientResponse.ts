@@ -1,4 +1,4 @@
-import { ConsumerClientResponseInterface } from '../Contracts/consumerClientResponse';
+import { ConsumerClientResponseInterface } from '../Contracts/ConsumerClientResponse';
 
 export class ConsumerClientResponse implements ConsumerClientResponseInterface {
 
