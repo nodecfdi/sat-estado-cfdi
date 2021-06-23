@@ -1,5 +1,5 @@
 import { CfdiStatus } from './CfdiStatus';
-import { ConsumerClientInterface } from './Contracts/ConsumerClient';
+import { ConsumerClientInterface } from './Contracts/ConsumerClientInterface';
 import { CfdiStatusBuilder } from './Utils/CfdiStatusBuilder';
 
 export class Consumer {

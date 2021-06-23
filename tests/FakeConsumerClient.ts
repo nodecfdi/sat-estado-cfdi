@@ -1,5 +1,5 @@
-import { ConsumerClientInterface } from '../src/Contracts/ConsumerClient';
-import { ConsumerClientResponseInterface } from '../src/Contracts/ConsumerClientResponse';
+import { ConsumerClientInterface } from '../src/Contracts/ConsumerClientInterface';
+import { ConsumerClientResponseInterface } from '../src/Contracts/ConsumerClientResponseInterface';
 import { ConsumerClientResponse } from '../src/Utils/ConsumerClientResponse';
 
 export class FakeConsumerClient implements ConsumerClientInterface {
