@@ -1,8 +1,8 @@
-interface ConsumerClientResponseInterface {
+export interface ConsumerClientResponseInterface {
     /**
      * Store a pair of keyword value
      */
-     set(keyword: string, content: string): void;
+     set(input: Record<string, string>): void;
 
      /**
       * Retrieve a value from a given keyword

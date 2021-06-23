@@ -19,17 +19,17 @@ export class CfdiStatus {
    *
    */
   constructor(
-    query: QueryStatus,
-    document: DocumentStatus,
-    cancellable: CancellableStatus,
-    cancellation: CancellationStatus,
-    efos: EfosStatus,
+    query: QueryStatus.status,
+    document: DocumentStatus.status,
+    cancellable: CancellableStatus.status,
+    cancellation: CancellationStatus.status,
+    efos: EfosStatus.status,
   ) {
-    this.query = query;
-    this.document = document;
-    this.cancellable = cancellable;
-    this.cancellation = cancellation;
-    this.efos = efos;
+    this.query = new QueryStatus(query);
+    this.document = new DocumentStatus(document);
+    this.cancellable = new CancellableStatus(cancellable);
+    this.cancellation = new CancellationStatus(cancellation);
+    this.efos = new EfosStatus(efos);
   }
 
   public getQuery(): QueryStatus {

@@ -5,7 +5,7 @@ import { DocumentStatus } from '../Status/documentStatus';
 import { EfosStatus } from '../Status/efosStatus';
 import { QueryStatus } from '../Status/queryStatus';
 
-export default class CfdiStatusBuilder {
+export class CfdiStatusBuilder {
   private codigoEstatus: string;
 
   private estado: string;
@@ -43,125 +43,62 @@ export default class CfdiStatusBuilder {
     );
   }
 
-  public createQueryStatus(): QueryStatus {
+  public createQueryStatus(): QueryStatus.status {
     // S - Comprobante obtenido satisfactoriamente
     const check = this.codigoEstatus.match('S - ');
     if (check && check[0]) {
-      return QueryStatus.found;
+      return QueryStatus.status.found;
     }
     // N - 60? ...
-    return QueryStatus.notFound;
+    return QueryStatus.status.notFound;
   }
 
-  public queryStatusIsFound(): boolean {
-    return this.createQueryStatus() === QueryStatus.found;
-  }
-
-  public queryStatusIsNotFound(): boolean {
-    return this.createQueryStatus() === QueryStatus.notFound;
-  }
-
-  public createDocumentSatus(): DocumentStatus {
+  public createDocumentSatus(): DocumentStatus.status {
     if ('Vigente' === this.estado) {
-      return DocumentStatus.active;
+      return DocumentStatus.status.active;
     }
     if ('Cancelado' === this.estado) {
-      return DocumentStatus.canceled;
+      return DocumentStatus.status.canceled;
     }
     // No encontrado
-    return DocumentStatus.notFound;
+    return DocumentStatus.status.notFound;
   }
 
-  public documentStatusIsActive(): boolean {
-    return this.createDocumentSatus() === DocumentStatus.active;
-  }
-
-  public documentStatusIsCanceled(): boolean {
-    return this.createDocumentSatus() === DocumentStatus.canceled;
-  }
-
-  public documentStatusIsNotFound(): boolean {
-    return this.createDocumentSatus() === DocumentStatus.notFound;
-  }
-
-  public createCancellableStatus(): CancellableStatus {
+  public createCancellableStatus(): CancellableStatus.status {
     if ('Cancelable sin aceptación' === this.esCancelable) {
-      return CancellableStatus.cancellableByDirectCall;
+      return CancellableStatus.status.cancellableByDirectCall;
     }
     if ('Cancelable con aceptación' === this.esCancelable) {
-      return CancellableStatus.cancellableByApproval;
+      return CancellableStatus.status.cancellableByApproval;
     }
     // No cancelable
-    return CancellableStatus.notCancellable;
+    return CancellableStatus.status.notCancellable;
   }
 
-  public cancellableStatusByDirectCall(): boolean {
-    return this.createCancellableStatus() === CancellableStatus.cancellableByDirectCall;
-  }
-
-  public cancellableStatusByApproval(): boolean {
-    return this.createCancellableStatus() === CancellableStatus.cancellableByApproval;
-  }
-  public cancellableStatusNotCancellable(): boolean {
-    return this.createCancellableStatus() === CancellableStatus.notCancellable;
-  }
-
-  public createCancellationStatus(): CancellationStatus {
+  public createCancellationStatus(): CancellationStatus.status {
     if ('Cancelado sin aceptación' === this.estatusCancelacion) {
-      return CancellationStatus.cancelledByDirectCall;
+      return CancellationStatus.status.cancelledByDirectCall;
     }
     if ('Plazo vencido' === this.estatusCancelacion) {
-      return CancellationStatus.cancelledByExpiration;
+      return CancellationStatus.status.cancelledByExpiration;
     }
     if ('Cancelado con aceptación' === this.estatusCancelacion) {
-      return CancellationStatus.cancelledByApproval;
+      return CancellationStatus.status.cancelledByApproval;
     }
     if ('En proceso' === this.estatusCancelacion) {
-      return CancellationStatus.pending;
+      return CancellationStatus.status.pending;
     }
     if ('Solicitud rechazada' === this.estatusCancelacion) {
-      return CancellationStatus.disapproved;
+      return CancellationStatus.status.disapproved;
     }
     // vacío
-    return CancellationStatus.undefined;
+    return CancellationStatus.status.undefined;
   }
 
-  public cancellationStatusIsUndefined(): boolean {
-    return this.createCancellationStatus() === CancellationStatus.undefined;
-  }
-
-  public cancellationStatusIsPending(): boolean {
-    return this.createCancellationStatus() === CancellationStatus.pending;
-  }
-
-  public cancellationStatusIsDisapprved(): boolean {
-    return this.createCancellationStatus() === CancellationStatus.disapproved;
-  }
-
-  public cancellationStatusIsCancelledByApproval(): boolean {
-    return this.createCancellationStatus() === CancellationStatus.cancelledByApproval;
-  }
-
-  public cancellationStatusIsCancelledByExpiration(): boolean {
-    return this.createCancellationStatus() === CancellationStatus.cancelledByExpiration;
-  }
-
-  public cancellationStatusIsCancelledByDirectCall(): boolean {
-    return this.createCancellationStatus() === CancellationStatus.cancelledByDirectCall;
-  }
-
-  public createEfosStatus(): EfosStatus {
+  public createEfosStatus(): EfosStatus.status {
     if ('200' === this.validacionEFOS) {
-      return EfosStatus.excluded;
+      return EfosStatus.status.excluded;
     }
-    return EfosStatus.included;
-  }
-
-  public efosStatusIsIncluded(): boolean {
-    return this.createEfosStatus() === EfosStatus.included;
-  }
-
-  public efosStatusIsExcluded(): boolean {
-    return this.createEfosStatus() === EfosStatus.excluded;
+    return EfosStatus.status.included;
   }
 }

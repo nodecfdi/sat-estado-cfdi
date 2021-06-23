@@ -1,4 +1,8 @@
-class Consumer {
+import { CfdiStatus } from "./cfdiStatus";
+import { ConsumerClientInterface } from "./Contracts/consumerClient";
+import { CfdiStatusBuilder } from "./Utils/cfdiStatusBuilder";
+
+export class Consumer {
     static readonly  WEBSERVICE_URI_PRODUCTION = 'https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc';
 
     static readonly WEBSERVICE_URI_DEVELOPMENT = 'https://pruebacfdiconsultaqr.cloudapp.net/ConsultaCFDIService.svc';
@@ -23,5 +27,20 @@ class Consumer {
     public getUri(): string
     {
         return this.uri;
+    }
+
+    public execute(expression: string): CfdiStatus
+    {
+        const responseConsumer = this.getClient().consume(this.getUri(), expression);
+
+        const builder = new CfdiStatusBuilder(
+            responseConsumer.get('CodigoEstatus'),
+            responseConsumer.get('Estado'),
+            responseConsumer.get('EsCancelable'),
+            responseConsumer.get('EstatusCancelacion'),
+            responseConsumer.get('ValidacionEFOS')
+        );
+
+        return builder.create();
     }
 }
