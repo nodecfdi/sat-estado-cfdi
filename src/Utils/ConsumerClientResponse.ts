@@ -2,7 +2,7 @@ import { ConsumerClientResponseInterface } from '../Contracts/ConsumerClientResp
 
 export class ConsumerClientResponse implements ConsumerClientResponseInterface {
 
-    private map!: Record<string, string>;
+    private map!: Record<string, string | null>;
 
     public set(input: Record<string, string>): void
     {

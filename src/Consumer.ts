@@ -1,5 +1,6 @@
 import { CfdiStatus } from './CfdiStatus';
 import { ConsumerClientInterface } from './Contracts/ConsumerClientInterface';
+import { ConsumerClientResponseInterface } from './Contracts/ConsumerClientResponseInterface';
 import { CfdiStatusBuilder } from './Utils/CfdiStatusBuilder';
 
 export class Consumer {
@@ -31,7 +32,7 @@ export class Consumer {
 
     public execute(expression: string): CfdiStatus
     {
-        const responseConsumer = this.getClient().consume(this.getUri(), expression);
+        const responseConsumer = this.getClient().consume(this.getUri(), expression) as ConsumerClientResponseInterface;
 
         const builder = new CfdiStatusBuilder(
             responseConsumer.get('CodigoEstatus'),
