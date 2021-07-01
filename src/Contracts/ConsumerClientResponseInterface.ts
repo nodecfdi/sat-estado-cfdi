@@ -2,7 +2,7 @@ export interface ConsumerClientResponseInterface {
     /**
      * Store a pair of keyword value
      */
-     set(input: Record<string, string>): void;
+     set(input: Record<string, string  | null>): void;
 
      /**
       * Retrieve a value from a given keyword
