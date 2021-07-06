@@ -11,7 +11,7 @@ export class ConsumerClientResponse implements ConsumerClientResponseInterface {
 
     public get(keyword: string): string
     {
-        return this.map[keyword] ?? '';
+        return this.map[keyword] || '';
     }
 
 }
