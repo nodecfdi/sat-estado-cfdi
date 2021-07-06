@@ -4,7 +4,7 @@ export class ConsumerClientResponse implements ConsumerClientResponseInterface {
 
     private map!: Record<string, string | null>;
 
-    public set(input: Record<string, string>): void
+    public set(input: Record<string, string | null>): void
     {
         this.map = input;
     }
