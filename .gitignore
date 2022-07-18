@@ -1,3 +1,11 @@
-node_modules
-dist
-coverage/*
+node_modules/
+coverage/
+dist/
+/.buildcache
+/.vscode/settings.json
+/scratch
+/reports
+tests/_build
+scratch
+*.tsbuildinfo
+.pnpm-debug.log
