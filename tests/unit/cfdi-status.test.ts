@@ -1,9 +1,9 @@
-import { CfdiStatus } from '../../src/cfdi-status';
-import { CancellableStatus, CancellableStatusEnum } from '../../src/status/cancellable-status';
-import { CancellationStatus, CancellationStatusEnum } from '../../src/status/cancellation-status';
-import { DocumentStatus, DocumentStatusEnum } from '../../src/status/document-status';
-import { EfosStatus, EfosStatusEnum } from '../../src/status/efos-status';
-import { QueryStatus, QueryStatusEnum } from '../../src/status/query-status';
+import { CfdiStatus } from '~/cfdi-status';
+import { CancellableStatus, CancellableStatusEnum } from '~/status/cancellable-status';
+import { CancellationStatus, CancellationStatusEnum } from '~/status/cancellation-status';
+import { DocumentStatus, DocumentStatusEnum } from '~/status/document-status';
+import { EfosStatus, EfosStatusEnum } from '~/status/efos-status';
+import { QueryStatus, QueryStatusEnum } from '~/status/query-status';
 
 describe('Cfdi status sat', () => {
     it('Object Return Correct Properties', () => {
