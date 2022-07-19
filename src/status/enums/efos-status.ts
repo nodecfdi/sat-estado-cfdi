@@ -1,4 +1,4 @@
 export enum Status {
-    included,
-    excluded
+    Included,
+    Excluded
 }

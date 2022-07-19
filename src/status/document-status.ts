@@ -8,15 +8,15 @@ class DocumentStatus {
     }
 
     public isActive(): boolean {
-        return this.current === Status.active;
+        return this.current === Status.Active;
     }
 
     public isCancelled(): boolean {
-        return this.current === Status.canceled;
+        return this.current === Status.Canceled;
     }
 
     public isNotFound(): boolean {
-        return this.current === Status.notFound;
+        return this.current === Status.NotFound;
     }
 }
 

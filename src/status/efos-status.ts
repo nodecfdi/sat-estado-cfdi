@@ -8,11 +8,11 @@ class EfosStatus {
     }
 
     public isIncluded(): boolean {
-        return this.current === Status.included;
+        return this.current === Status.Included;
     }
 
     public isExcluded(): boolean {
-        return this.current === Status.excluded;
+        return this.current === Status.Excluded;
     }
 }
 

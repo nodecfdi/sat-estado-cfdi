@@ -1,5 +1,5 @@
 import { FakeConsumerClient } from '../fake-consumer-client';
-import { Consumer } from '../../src/consumer';
+import { Consumer } from '~/consumer';
 describe('Consumer test', () => {
     it('Has Same Factory And Uri As Constructed', () => {
         const client = new FakeConsumerClient({ '': '' });

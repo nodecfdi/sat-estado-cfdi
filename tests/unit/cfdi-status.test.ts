@@ -7,11 +7,11 @@ import { QueryStatus, QueryStatusEnum } from '../../src/status/query-status';
 
 describe('Cfdi status sat', () => {
     it('Object Return Correct Properties', () => {
-        const query = new QueryStatus(QueryStatusEnum.found);
-        const document = new DocumentStatus(DocumentStatusEnum.active);
-        const cancellable = new CancellableStatus(CancellableStatusEnum.notCancellable);
-        const cancellation = new CancellationStatus(CancellationStatusEnum.undefined);
-        const efos = new EfosStatus(EfosStatusEnum.excluded);
+        const query = new QueryStatus(QueryStatusEnum.Found);
+        const document = new DocumentStatus(DocumentStatusEnum.Active);
+        const cancellable = new CancellableStatus(CancellableStatusEnum.NotCancellable);
+        const cancellation = new CancellationStatus(CancellationStatusEnum.Undefined);
+        const efos = new EfosStatus(EfosStatusEnum.Excluded);
         const cfdiStatus = new CfdiStatus(query, document, cancellable, cancellation, efos);
 
         expect(query.isFound()).toBe(cfdiStatus.getQuery().isFound());

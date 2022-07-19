@@ -7,11 +7,11 @@ class QueryStatus {
     }
 
     public isFound(): boolean {
-        return this.current == Status.found;
+        return this.current == Status.Found;
     }
 
     public isNotFound(): boolean {
-        return this.current == Status.notFound;
+        return this.current == Status.NotFound;
     }
 }
 

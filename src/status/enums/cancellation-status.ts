@@ -1,8 +1,8 @@
 export enum Status {
-    undefined,
-    pending,
-    disapproved,
-    cancelledByApproval,
-    cancelledByExpiration,
-    cancelledByDirectCall
+    Undefined,
+    Pending,
+    Disapproved,
+    CancelledByApproval,
+    CancelledByExpiration,
+    CancelledByDirectCall
 }

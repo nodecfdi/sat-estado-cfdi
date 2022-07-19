@@ -31,7 +31,7 @@ export class Consumer {
     }
 
     public execute(expression: string): CfdiStatus {
-        const responseConsumer = this.getClient().consume(this.getUri(), expression) as ConsumerClientResponseInterface;
+        const responseConsumer: ConsumerClientResponseInterface = this.getClient().consume(this.getUri(), expression);
 
         const builder = new CfdiStatusBuilder(
             responseConsumer.get('CodigoEstatus'),

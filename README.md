@@ -49,7 +49,7 @@ yarn add @nodecfdi/sat-estado-cfdi
 import { ConsumerClientInterface, Consumer } from '@nodecfdi/sat-estado-cfdi';
 
 //el cliente debe implementar ConsumerClientInterface
-const client = Client();
+const client = new Client();
 const consumer = new Consumer(client);
 
 // para clientes síncronos el consumer debe tener la opción de hacer llamadas síncronas

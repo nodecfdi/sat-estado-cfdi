@@ -47,63 +47,63 @@ export class CfdiStatusBuilder {
         // S - Comprobante obtenido satisfactoriamente
         const check = /S - /.exec(this.codigoEstatus);
         if (check && check[0]) {
-            return new QueryStatus(QueryStatusEnum.found);
+            return new QueryStatus(QueryStatusEnum.Found);
         }
 
         // N - 60? ...
-        return new QueryStatus(QueryStatusEnum.notFound);
+        return new QueryStatus(QueryStatusEnum.NotFound);
     }
 
     public createDocumentSatus(): DocumentStatus {
         if ('Vigente' === this.estado) {
-            return new DocumentStatus(DocumentStatusEnum.active);
+            return new DocumentStatus(DocumentStatusEnum.Active);
         }
         if ('Cancelado' === this.estado) {
-            return new DocumentStatus(DocumentStatusEnum.canceled);
+            return new DocumentStatus(DocumentStatusEnum.Canceled);
         }
 
         // No encontrado
-        return new DocumentStatus(DocumentStatusEnum.notFound);
+        return new DocumentStatus(DocumentStatusEnum.NotFound);
     }
 
     public createCancellableStatus(): CancellableStatus {
         if ('Cancelable sin aceptación' === this.esCancelable) {
-            return new CancellableStatus(CancellableStatusEnum.cancellableByDirectCall);
+            return new CancellableStatus(CancellableStatusEnum.CancellableByDirectCall);
         }
         if ('Cancelable con aceptación' === this.esCancelable) {
-            return new CancellableStatus(CancellableStatusEnum.cancellableByApproval);
+            return new CancellableStatus(CancellableStatusEnum.CancellableByApproval);
         }
 
         // No cancelable
-        return new CancellableStatus(CancellableStatusEnum.notCancellable);
+        return new CancellableStatus(CancellableStatusEnum.NotCancellable);
     }
 
     public createCancellationStatus(): CancellationStatus {
         if ('Cancelado sin aceptación' === this.estatusCancelacion) {
-            return new CancellationStatus(CancellationStatusEnum.cancelledByDirectCall);
+            return new CancellationStatus(CancellationStatusEnum.CancelledByDirectCall);
         }
         if ('Plazo vencido' === this.estatusCancelacion) {
-            return new CancellationStatus(CancellationStatusEnum.cancelledByExpiration);
+            return new CancellationStatus(CancellationStatusEnum.CancelledByExpiration);
         }
         if ('Cancelado con aceptación' === this.estatusCancelacion) {
-            return new CancellationStatus(CancellationStatusEnum.cancelledByApproval);
+            return new CancellationStatus(CancellationStatusEnum.CancelledByApproval);
         }
         if ('En proceso' === this.estatusCancelacion) {
-            return new CancellationStatus(CancellationStatusEnum.pending);
+            return new CancellationStatus(CancellationStatusEnum.Pending);
         }
         if ('Solicitud rechazada' === this.estatusCancelacion) {
-            return new CancellationStatus(CancellationStatusEnum.disapproved);
+            return new CancellationStatus(CancellationStatusEnum.Disapproved);
         }
 
         // vacío
-        return new CancellationStatus(CancellationStatusEnum.undefined);
+        return new CancellationStatus(CancellationStatusEnum.Undefined);
     }
 
     public createEfosStatus(): EfosStatus {
         if ('200' === this.validacionEFOS) {
-            return new EfosStatus(EfosStatusEnum.excluded);
+            return new EfosStatus(EfosStatusEnum.Excluded);
         }
 
-        return new EfosStatus(EfosStatusEnum.included);
+        return new EfosStatus(EfosStatusEnum.Included);
     }
 }

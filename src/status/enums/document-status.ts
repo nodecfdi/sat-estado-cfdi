@@ -1,5 +1,5 @@
 export enum Status {
-    canceled,
-    active,
-    notFound
+    Canceled,
+    Active,
+    NotFound
 }

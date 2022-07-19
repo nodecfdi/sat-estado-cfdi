@@ -1,5 +1,5 @@
 export enum Status {
-    cancellableByDirectCall,
-    cancellableByApproval,
-    notCancellable
+    CancellableByDirectCall,
+    CancellableByApproval,
+    NotCancellable
 }

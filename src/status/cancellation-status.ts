@@ -7,27 +7,27 @@ class CancellationStatus {
     }
 
     public isUndefined(): boolean {
-        return this.current === Status.undefined;
+        return this.current === Status.Undefined;
     }
 
     public isPending(): boolean {
-        return this.current === Status.pending;
+        return this.current === Status.Pending;
     }
 
     public isDisapproved(): boolean {
-        return this.current === Status.disapproved;
+        return this.current === Status.Disapproved;
     }
 
     public isCancelledByApproval(): boolean {
-        return this.current === Status.cancelledByApproval;
+        return this.current === Status.CancelledByApproval;
     }
 
     public isCancelledByExpiration(): boolean {
-        return this.current === Status.cancelledByExpiration;
+        return this.current === Status.CancelledByExpiration;
     }
 
     public isCancelledByDirectCall(): boolean {
-        return this.current === Status.cancelledByDirectCall;
+        return this.current === Status.CancelledByDirectCall;
     }
 }
 

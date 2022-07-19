@@ -1,6 +1,6 @@
-import { ConsumerClientInterface } from '../src/contracts/consumer-client-interface';
-import { ConsumerClientResponseInterface } from '../src/contracts/consumer-client-response-interface';
-import { ConsumerClientResponse } from '../src/utils/consumer-client-response';
+import { ConsumerClientInterface } from '~/contracts/consumer-client-interface';
+import { ConsumerClientResponseInterface } from '~/contracts/consumer-client-response-interface';
+import { ConsumerClientResponse } from '~/utils/consumer-client-response';
 
 export class FakeConsumerClient implements ConsumerClientInterface {
     private consumeResponse!: ConsumerClientResponseInterface;
@@ -13,11 +13,11 @@ export class FakeConsumerClient implements ConsumerClientInterface {
         this.setClientResponse(predefined);
     }
 
-    public consume(uri: string, expression: string): ConsumerClientResponseInterface {
+    public consume<ConsumerClientResponseInterface>(uri: string, expression: string): ConsumerClientResponseInterface {
         this.lastUri = uri;
         this.lastExpression = expression;
 
-        return this.consumeResponse;
+        return this.consumeResponse as unknown as ConsumerClientResponseInterface;
     }
 
     public setClientResponse(predefined: Record<string, string>): void {

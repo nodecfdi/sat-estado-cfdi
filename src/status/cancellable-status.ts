@@ -7,15 +7,15 @@ class CancellableStatus {
     }
 
     public cancellableByDirectCall(): boolean {
-        return this.current === Status.cancellableByDirectCall;
+        return this.current === Status.CancellableByDirectCall;
     }
 
     public cancellableByApproval(): boolean {
-        return this.current === Status.cancellableByApproval;
+        return this.current === Status.CancellableByApproval;
     }
 
     public notCancellable(): boolean {
-        return this.current === Status.notCancellable;
+        return this.current === Status.NotCancellable;
     }
 }
 
