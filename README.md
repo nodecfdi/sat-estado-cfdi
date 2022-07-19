@@ -1,24 +1,27 @@
-# nodecfdi/sat-estado-cfdi
+# `@nodecfdi/sat-estado-cfdi`
 
 [![Source Code][badge-source]][source]
+[![Npm Node Version Support][badge-node-version]][node-version]
+[![Discord][badge-discord]][discord]
 [![Latest Version][badge-release]][release]
 [![Software License][badge-license]][license]
-[![Discord][badge-discord]][discord]
-
-[source]: https://github.com/nodecfdi/sat-estado-cfdi
-[badge-source]: https://img.shields.io/badge/source-nodecfdi%2Fsat--estado--cfdi-blue?logo=data%3Aimage%2Fsvg%2Bxml%3Bbase64%2CPHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSI0MCIgaGVpZ2h0PSI0MCIgdmlld0JveD0iMTIgMTIgNDAgNDAiPjxwYXRoIGZpbGw9IiMzMzMzMzMiIGQ9Ik0zMiwxMy40Yy0xMC41LDAtMTksOC41LTE5LDE5YzAsOC40LDUuNSwxNS41LDEzLDE4YzEsMC4yLDEuMy0wLjQsMS4zLTAuOWMwLTAuNSwwLTEuNywwLTMuMiBjLTUuMywxLjEtNi40LTIuNi02LjQtMi42QzIwLDQxLjYsMTguOCw0MSwxOC44LDQxYy0xLjctMS4yLDAuMS0xLjEsMC4xLTEuMWMxLjksMC4xLDIuOSwyLDIuOSwyYzEuNywyLjksNC41LDIuMSw1LjUsMS42IGMwLjItMS4yLDAuNy0yLjEsMS4yLTIuNmMtNC4yLTAuNS04LjctMi4xLTguNy05LjRjMC0yLjEsMC43LTMuNywyLTUuMWMtMC4yLTAuNS0wLjgtMi40LDAuMi01YzAsMCwxLjYtMC41LDUuMiwyIGMxLjUtMC40LDMuMS0wLjcsNC44LTAuN2MxLjYsMCwzLjMsMC4yLDQuNywwLjdjMy42LTIuNCw1LjItMiw1LjItMmMxLDIuNiwwLjQsNC42LDAuMiw1YzEuMiwxLjMsMiwzLDIsNS4xYzAsNy4zLTQuNSw4LjktOC43LDkuNCBjMC43LDAuNiwxLjMsMS43LDEuMywzLjVjMCwyLjYsMCw0LjYsMCw1LjJjMCwwLjUsMC40LDEuMSwxLjMsMC45YzcuNS0yLjYsMTMtOS43LDEzLTE4LjFDNTEsMjEuOSw0Mi41LDEzLjQsMzIsMTMuNHoiLz48L3N2Zz4%3D
-[license]: https://github.com/nodecfdi/sat-estado-cfdi/blob/master/LICENSE
-[badge-license]: https://img.shields.io/github/license/nodecfdi/sat-estado-cfdi?logo=open-source-initiative&style=flat-square
-[badge-release]: https://img.shields.io/npm/v/@nodecfdi/sat-estado-cfdi
-[release]: https://www.npmjs.com/package/@nodecfdi/sat-estado-cfdi
-[badge-discord]: https://img.shields.io/discord/459860554090283019?logo=discord&style=flat-square
-[discord]: https://discord.gg/aFGYXvX
+[![Build Status][badge-build]][build]
+[![Reliability][badge-reliability]][reliability]
+[![Maintainability][badge-maintainability]][maintainability]
+[![Code Coverage][badge-coverage]][coverage]
+[![Violations][badge-violations]][violations]
+[![Total Downloads][badge-downloads]][downloads]
 
 > Consulta el estado de un CFDI en el webservice del SAT
 
+:us: The documentation of this project is in spanish as this is the natural language for intented audience.
+
+:mexico: La documentación del proyecto está en español porque ese es el lenguaje principal de los usuarios.
+
+## Acerca de `@nodecfdi/sat-estado-cfdi`
 
  Esta librería contiene objetos de ayuda para consumir el **Servicio de Consulta de CFDI del SAT**.
-La documentación del proyecto está en español porque ese es el lenguaje de los usuarios que la utilizarán. Esta librería está inspirada en: https://github.com/phpcfdi/sat-estado-cfdi/
+La documentación del proyecto está en español porque ese es el lenguaje de los usuarios que la utilizarán. Esta librería está inspirada en: <https://github.com/phpcfdi/sat-estado-cfdi/>
 
 **Servicio de Consulta de CFDI del SAT**:
 
@@ -33,7 +36,9 @@ La documentación del proyecto está en español porque ese es el lenguaje de lo
 ```shell
 npm i @nodecfdi/sat-estado-cfdi --save
 ```
-o 
+
+o
+
 ```shell
 yarn add @nodecfdi/sat-estado-cfdi
 ```
@@ -44,7 +49,7 @@ yarn add @nodecfdi/sat-estado-cfdi
 import { ConsumerClientInterface, Consumer } from '@nodecfdi/sat-estado-cfdi';
 
 //el cliente debe implementar ConsumerClientInterface
-const client = Client();
+const client = new Client();
 const consumer = new Consumer(client);
 
 // para clientes síncronos el consumer debe tener la opción de hacer llamadas síncronas
@@ -79,32 +84,32 @@ por ejemplo `$response->document()->isCancelled()`.
 Posibles estados:
 
 - `CodigoEstatus`: `query(): QueryStatus`.
-    - `found`: Si el estado inicia con `S - `.
-    - `notFound`: en cualquier otro caso.
+  - `found`: Si el estado inicia con `S -`.
+  - `notFound`: en cualquier otro caso.
 
 - `Estado`: `document(): DocumentStatus`.
-    - `active`: Si el estado reportó `Vigente`.
-    - `cancelled`: Si el estado reportó `Cancelado`.
-    - `notFound`: en cualquier otro caso.
+  - `active`: Si el estado reportó `Vigente`.
+  - `cancelled`: Si el estado reportó `Cancelado`.
+  - `notFound`: en cualquier otro caso.
 
 - `EsCancelable`: `cancellable(): CancellableStatus`.
-    - `cancellableByDirectCall`: Si el estado reportó `Cancelable sin aceptación`.
-    - `cancellableByApproval`: Si el estado reportó `Cancelable con aceptación`.
-    - `notCancellable`: en cualquier otro caso.
+  - `cancellableByDirectCall`: Si el estado reportó `Cancelable sin aceptación`.
+  - `cancellableByApproval`: Si el estado reportó `Cancelable con aceptación`.
+  - `notCancellable`: en cualquier otro caso.
 
 - `EstatusCancelacion`: `cancellation(): CancellationStatus`.
-    - `cancelledByDirectCall`: Si el estado reportó `Cancelado sin aceptación`.
-    - `cancelledByApproval`: Si el estado reportó `Cancelado con aceptación`.
-    - `cancelledByExpiration`: Si el estado reportó `Plazo vencido`.
-    - `pending`: Si el estado reportó `En proceso`.
-    - `disapproved`: Si el estado reportó `Solicitud rechazada`.
-    - `undefined`: en cualquier otro caso.
+  - `cancelledByDirectCall`: Si el estado reportó `Cancelado sin aceptación`.
+  - `cancelledByApproval`: Si el estado reportó `Cancelado con aceptación`.
+  - `cancelledByExpiration`: Si el estado reportó `Plazo vencido`.
+  - `pending`: Si el estado reportó `En proceso`.
+  - `disapproved`: Si el estado reportó `Solicitud rechazada`.
+  - `undefined`: en cualquier otro caso.
 
 - `ValidacionEFOS`: `efos(): EfosStatus`.
-    - `included`: Si el estado no reportó `200`.
-    - `excluded`: Si el estado reportó `200`.
+  - `included`: Si el estado no reportó `200`.
+  - `excluded`: Si el estado reportó `200`.
 
-#### Estados mutuamente excluyentes:
+#### Estados mutuamente excluyentes
 
 CodigoEstatus | Estado        | EsCancelable              | EstatusCancelacion       | Explicación
 ------------- | ------------- | ------------------------- | ------------------------ | -----------------------------------------------------
@@ -131,3 +136,51 @@ Podrías volver a enviar la solicitud de cancelación *por segunda vez* aun cuan
 En ese caso, el receptor puede aceptar o rechazar la cancelación, pero ya no aplicará un lapzo de 72 horas.
 Por lo anterior entonces podrías tener el CFDI en estado de cancelación *en proceso* indefinidamente.
 Incluso, que la cancelación suceda meses después de lo esperado.
+
+## Soporte
+
+Puedes obtener soporte abriendo un ticket en Github.
+
+Adicionalmente, esta librería pertenece a la comunidad [OcelotlStudio](https://ocelotlstudio.com), así que puedes usar los mismos canales de comunicación para obtener ayuda de algún miembro de la comunidad.
+
+## Compatibilidad
+
+Esta librería se mantendrá compatible con al menos la versión con
+[soporte activo de Node](https://nodejs.org/es/about/releases/) más reciente.
+
+También utilizamos [Versionado Semántico 2.0.0](https://semver.org/lang/es/) por lo que puedes usar esta librería sin temor a romper tu aplicación.
+
+## Contribuciones
+
+Las contribuciones con bienvenidas. Por favor lee [CONTRIBUTING][] para más detalles y recuerda revisar el archivo [CHANGELOG][].
+
+## Copyright and License
+
+The `@nodecfdi/sat-estado-cfdi` library is copyright © [NodeCfdi](https://github.com/nodecfdi) - [OcelotlStudio](https://ocelotlstudio.com) and licensed for use under the MIT License (MIT). Please see [LICENSE][] for more information.
+
+[contributing]: https://github.com/nodecfdi/sat-estado-cfdi/blob/main/CONTRIBUTING.md
+[changelog]: https://github.com/nodecfdi/sat-estado-cfdi/blob/main/CHANGELOG.md
+
+[source]: https://github.com/nodecfdi/sat-estado-cfdi
+[node-version]: https://www.npmjs.com/package/@nodecfdi/sat-estado-cfdi
+[discord]: https://discord.gg/AsqX8fkW2k
+[release]: https://www.npmjs.com/package/@nodecfdi/sat-estado-cfdi
+[license]: https://github.com/nodecfdi/sat-estado-cfdi/blob/main/LICENSE
+[build]: https://github.com/nodecfdi/sat-estado-cfdi/actions/workflows/build.yml?query=branch:main
+[reliability]:https://sonarcloud.io/component_measures?id=nodecfdi_sat-estado-cfdi&metric=Reliability
+[maintainability]: https://sonarcloud.io/component_measures?id=nodecfdi_sat-estado-cfdi&metric=Maintainability
+[coverage]: https://sonarcloud.io/component_measures?id=nodecfdi_sat-estado-cfdi&metric=Coverage
+[violations]: https://sonarcloud.io/project/issues?id=nodecfdi_sat-estado-cfdi&resolved=false
+[downloads]: https://www.npmjs.com/package/@nodecfdi/sat-estado-cfdi
+
+[badge-source]: https://img.shields.io/badge/source-nodecfdi/sat--estado--cfdi-blue.svg?logo=github
+[badge-node-version]: https://img.shields.io/node/v/@nodecfdi/sat-estado-cfdi.svg?logo=nodedotjs
+[badge-discord]: https://img.shields.io/discord/459860554090283019?logo=discord
+[badge-release]: https://img.shields.io/npm/v/@nodecfdi/sat-estado-cfdi.svg?logo=npm
+[badge-license]: https://img.shields.io/github/license/nodecfdi/sat-estado-cfdi.svg?logo=open-source-initiative
+[badge-build]: https://img.shields.io/github/workflow/status/nodecfdi/sat-estado-cfdi/build/main?logo=github-actions
+[badge-reliability]: https://sonarcloud.io/api/project_badges/measure?project=nodecfdi_sat-estado-cfdi&metric=reliability_rating
+[badge-maintainability]: https://sonarcloud.io/api/project_badges/measure?project=nodecfdi_sat-estado-cfdi&metric=sqale_rating
+[badge-coverage]: https://img.shields.io/sonar/coverage/nodecfdi_sat-estado-cfdi/main?logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io
+[badge-violations]: https://img.shields.io/sonar/violations/nodecfdi_sat-estado-cfdi/main?format=long&logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io
+[badge-downloads]: https://img.shields.io/npm/dm/@nodecfdi/sat-estado-cfdi.svg?logo=npm

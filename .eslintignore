@@ -1,3 +1,6 @@
-dist
 node_modules
-.husky
+dist
+docs
+examples
+coverage
+web_modules

@@ -1,9 +1,11 @@
-import { ConsumerClientInterface } from './Contracts/ConsumerClientInterface';
-import { ConsumerClientResponseInterface } from './Contracts/ConsumerClientResponseInterface';
-import { Consumer } from './Consumer';
-import { ConsumerClientResponse } from './Utils/ConsumerClientResponse'
-
-export { ConsumerClientInterface, ConsumerClientResponseInterface, Consumer, ConsumerClientResponse };
-
-Object.assign(module.exports, Consumer);
-Object.assign(module.exports, ConsumerClientResponse);
+export * from './contracts/consumer-client-interface';
+export * from './contracts/consumer-client-response-interface';
+export * from './status/cancellable-status';
+export * from './status/cancellation-status';
+export * from './status/document-status';
+export * from './status/efos-status';
+export * from './status/query-status';
+export * from './utils/cfdi-status-builder';
+export * from './utils/consumer-client-response';
+export * from './consumer';
+export * from './cfdi-status';
