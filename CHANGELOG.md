@@ -1,5 +1,11 @@
 # @nodecfdi/sat-estado-cfdi ChangeLog
 
+## 2.0.2
+
+### Patch Changes
+
+- Fix types in consume method
+
 ## 2.0.1
 
 ### Patch Changes
