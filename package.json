@@ -15,6 +15,7 @@
     "type": "module",
     "main": "./dist/sat-estado-cfdi.cjs",
     "module": "./dist/sat-estado-cfdi.js",
+    "unpkg": "./dist/sat-estado-cfdi.global.js",
     "browser": "./dist/sat-estado-cfdi.global.js",
     "types": "./dist/index.d.ts",
     "exports": {
@@ -75,7 +76,7 @@
         ]
     },
     "lint-staged": {
-        "*.{js,ts,json}": [
+        "*.{json}": [
             "prettier --write"
         ],
         "*.{js,ts}": [
@@ -83,7 +84,7 @@
         ]
     },
     "engines": {
-        "node": ">= 16.0.0"
+        "node": ">= 16"
     },
     "browserslist": [
         "defaults",

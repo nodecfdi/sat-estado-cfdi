@@ -4,8 +4,8 @@ import { defineConfig, type Options } from 'tsup';
 const entry = 'src/index.ts';
 
 const sharedConfig = defineConfig({
-    name: 'rfc',
-    globalName: 'rfc',
+    name: 'sat-estado-cfdi',
+    globalName: 'satEstadoCfdi',
     splitting: false,
     sourcemap: true,
     format: ['esm', 'cjs', 'iife'],
@@ -16,7 +16,7 @@ const sharedConfig = defineConfig({
 const mainConfig = defineConfig({
     ...sharedConfig,
     entry: {
-        rfc: entry,
+        'sat-estado-cfdi': entry,
     },
     dts: false,
 }) as Options;
@@ -24,7 +24,7 @@ const mainConfig = defineConfig({
 const dtsConfig = defineConfig({
     ...sharedConfig,
     entry: {
-        rfc: entry,
+        'sat-estado-cfdi': entry,
     },
     dts: {
         entry,

@@ -33,14 +33,30 @@ La documentación del proyecto está en español porque ese es el lenguaje de lo
 
 ## Instalación
 
-```shell
+NPM
+
+```bash
 npm i @nodecfdi/sat-estado-cfdi --save
 ```
 
-o
+YARN
 
-```shell
+```bash
 yarn add @nodecfdi/sat-estado-cfdi
+```
+
+PNPM
+
+```bash
+pnpm add @nodecfdi/sat-estado-cfdi
+```
+
+CDN - Browser
+
+Usa la versión mas reciente publicada cambiando `<latest-version>` por la última version. Ex. ...sat-estado-cfdi@2.0.3/dist...
+
+```html
+<script src="https://unpkg.com/@nodecfdi/sat-estado-cfdi@<latest-version>/dist/sat-estado-cfdi.global.js"></script>
 ```
 
 ## Ejemplo básico de uso

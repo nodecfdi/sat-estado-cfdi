@@ -2,13 +2,13 @@
 
 ## 2.0.2
 
-### Patch Changes
+### Fix types in consume method
 
 - Fix types in consume method
 
 ## 2.0.1
 
-### Patch Changes
+### Added browser support
 
 - Added browser support on distributable files
 
