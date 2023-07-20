@@ -178,7 +178,7 @@ The `@nodecfdi/sat-estado-cfdi` library is copyright © [NodeCfdi](https://githu
 [badge-discord]: https://img.shields.io/discord/459860554090283019?logo=discord
 [badge-release]: https://img.shields.io/npm/v/@nodecfdi/sat-estado-cfdi.svg?logo=npm
 [badge-license]: https://img.shields.io/github/license/nodecfdi/sat-estado-cfdi.svg?logo=open-source-initiative
-[badge-build]: https://img.shields.io/github/workflow/status/nodecfdi/sat-estado-cfdi/build/main?logo=github-actions
+[badge-build]: https://img.shields.io/github/actions/workflow/status/nodecfdi/sat-estado-cfdi/build.yml?branch=main
 [badge-reliability]: https://sonarcloud.io/api/project_badges/measure?project=nodecfdi_sat-estado-cfdi&metric=reliability_rating
 [badge-maintainability]: https://sonarcloud.io/api/project_badges/measure?project=nodecfdi_sat-estado-cfdi&metric=sqale_rating
 [badge-coverage]: https://img.shields.io/sonar/coverage/nodecfdi_sat-estado-cfdi/main?logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io
