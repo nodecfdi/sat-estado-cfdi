@@ -1,4 +1,4 @@
-import { ConsumerClientResponseInterface } from '../contracts/consumer-client-response-interface';
+import { type ConsumerClientResponseInterface } from '../contracts/consumer-client-response-interface';
 
 export class ConsumerClientResponse implements ConsumerClientResponseInterface {
     private map!: Record<string, string | null>;
@@ -8,6 +8,6 @@ export class ConsumerClientResponse implements ConsumerClientResponseInterface {
     }
 
     public get(keyword: string): string {
-        return this.map[keyword] || '';
+        return this.map[keyword] ?? '';
     }
 }

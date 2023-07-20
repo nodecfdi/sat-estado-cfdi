@@ -1,16 +1,23 @@
-import { ConsumerClientInterface } from '~/contracts/consumer-client-interface';
-import { ConsumerClientResponseInterface } from '~/contracts/consumer-client-response-interface';
-import { ConsumerClientResponse } from '~/utils/consumer-client-response';
+import { type ConsumerClientInterface } from 'src/contracts/consumer-client-interface';
+import { type ConsumerClientResponseInterface } from 'src/contracts/consumer-client-response-interface';
+import { ConsumerClientResponse } from 'src/utils/consumer-client-response';
 
 export class FakeConsumerClient implements ConsumerClientInterface {
-    private consumeResponse!: ConsumerClientResponseInterface;
-
     public lastUri = '';
 
     public lastExpression = '';
 
+    private consumeResponse!: ConsumerClientResponseInterface;
+
     constructor(predefined: Record<string, string>) {
         this.setClientResponse(predefined);
+    }
+
+    public static consumerClientResponseFromArray(input: Record<string, string>): ConsumerClientResponseInterface {
+        const consumeResponse = new ConsumerClientResponse();
+        consumeResponse.set(input);
+
+        return consumeResponse;
     }
 
     public consume<ConsumerClientResponseInterface>(uri: string, expression: string): ConsumerClientResponseInterface {
@@ -22,12 +29,5 @@ export class FakeConsumerClient implements ConsumerClientInterface {
 
     public setClientResponse(predefined: Record<string, string>): void {
         this.consumeResponse = FakeConsumerClient.consumerClientResponseFromArray(predefined);
-    }
-
-    public static consumerClientResponseFromArray(input: Record<string, string>): ConsumerClientResponseInterface {
-        const consumeResponse = new ConsumerClientResponse();
-        consumeResponse.set(input);
-
-        return consumeResponse;
     }
 }

@@ -1,5 +1,6 @@
 import { FakeConsumerClient } from '../fake-consumer-client';
-import { Consumer } from '~/consumer';
+import { Consumer } from 'src/consumer';
+
 describe('Consumer test', () => {
     it('Has Same Factory And Uri As Constructed', () => {
         const client = new FakeConsumerClient({ '': '' });
@@ -16,7 +17,7 @@ describe('Consumer test', () => {
             Estado: 'Vigente',
             EsCancelable: 'Cancelable con aceptación',
             EstatusCancelacion: 'En proceso',
-            ValidacionEFOS: '200'
+            ValidacionEFOS: '200',
         };
         const fakeExpression = 'foo-bar';
         const fakeClient = new FakeConsumerClient(fakeInput);

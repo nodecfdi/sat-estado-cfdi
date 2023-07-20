@@ -4,5 +4,5 @@ export enum Status {
     Disapproved,
     CancelledByApproval,
     CancelledByExpiration,
-    CancelledByDirectCall
+    CancelledByDirectCall,
 }

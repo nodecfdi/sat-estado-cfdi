@@ -1,36 +1,20 @@
-import { CancellableStatus } from './status/cancellable-status';
-import { CancellationStatus } from './status/cancellation-status';
-import { DocumentStatus } from './status/document-status';
-import { EfosStatus } from './status/efos-status';
-import { QueryStatus } from './status/query-status';
+import { type CancellableStatus } from './status/cancellable-status';
+import { type CancellationStatus } from './status/cancellation-status';
+import { type DocumentStatus } from './status/document-status';
+import { type EfosStatus } from './status/efos-status';
+import { type QueryStatus } from './status/query-status';
 
 export class CfdiStatus {
-    private query: QueryStatus;
-
-    private document: DocumentStatus;
-
-    private cancellable: CancellableStatus;
-
-    private cancellation: CancellationStatus;
-
-    private efos: EfosStatus;
-
     /**
      *
      */
     constructor(
-        query: QueryStatus,
-        document: DocumentStatus,
-        cancellable: CancellableStatus,
-        cancellation: CancellationStatus,
-        efos: EfosStatus
-    ) {
-        this.query = query;
-        this.document = document;
-        this.cancellable = cancellable;
-        this.cancellation = cancellation;
-        this.efos = efos;
-    }
+        private readonly query: QueryStatus,
+        private readonly document: DocumentStatus,
+        private readonly cancellable: CancellableStatus,
+        private readonly cancellation: CancellationStatus,
+        private readonly efos: EfosStatus,
+    ) {}
 
     public getQuery(): QueryStatus {
         return this.query;

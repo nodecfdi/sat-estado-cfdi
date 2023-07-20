@@ -1,11 +1,7 @@
 import { Status } from './enums/efos-status';
 
 class EfosStatus {
-    private current: Status;
-
-    constructor(status: Status) {
-        this.current = status;
-    }
+    constructor(private readonly current: Status) {}
 
     public isIncluded(): boolean {
         return this.current === Status.Included;
@@ -16,4 +12,6 @@ class EfosStatus {
     }
 }
 
-export { EfosStatus, Status as EfosStatusEnum };
+export { EfosStatus };
+
+export { Status as EfosStatusEnum } from './enums/efos-status';
