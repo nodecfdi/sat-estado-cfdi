@@ -1,18 +1,18 @@
-import { CfdiStatus } from './cfdi-status';
-import { ConsumerClientInterface } from './contracts/consumer-client-interface';
-import { ConsumerClientResponseInterface } from './contracts/consumer-client-response-interface';
+import { type CfdiStatus } from './cfdi-status';
+import { type ConsumerClientInterface } from './contracts/consumer-client-interface';
+import { type ConsumerClientResponseInterface } from './contracts/consumer-client-response-interface';
 import { CfdiStatusBuilder } from './utils/cfdi-status-builder';
 
 export class Consumer {
     public static readonly WEBSERVICE_URI_PRODUCTION =
-        'https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc';
+        'https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc' as const;
 
     public static readonly WEBSERVICE_URI_DEVELOPMENT =
-        'https://pruebacfdiconsultaqr.cloudapp.net/ConsultaCFDIService.svc';
+        'https://pruebacfdiconsultaqr.cloudapp.net/ConsultaCFDIService.svc' as const;
 
-    private client: ConsumerClientInterface;
+    private readonly client: ConsumerClientInterface;
 
-    private uri: string;
+    private readonly uri: string;
 
     /**
      *
@@ -33,7 +33,7 @@ export class Consumer {
     public execute(expression: string): CfdiStatus {
         const responseConsumer = this.getClient().consume<ConsumerClientResponseInterface>(
             this.getUri(),
-            expression
+            expression,
         ) as ConsumerClientResponseInterface;
 
         const builder = new CfdiStatusBuilder(
@@ -41,7 +41,8 @@ export class Consumer {
             responseConsumer.get('Estado'),
             responseConsumer.get('EsCancelable'),
             responseConsumer.get('EstatusCancelacion'),
-            responseConsumer.get('ValidacionEFOS')
+            responseConsumer.get('ValidacionEFOS'),
+            responseConsumer.raw(),
         );
 
         return builder.create();
@@ -55,7 +56,8 @@ export class Consumer {
             responseConsumer.get('Estado'),
             responseConsumer.get('EsCancelable'),
             responseConsumer.get('EstatusCancelacion'),
-            responseConsumer.get('ValidacionEFOS')
+            responseConsumer.get('ValidacionEFOS'),
+            responseConsumer.raw(),
         );
 
         return builder.create();

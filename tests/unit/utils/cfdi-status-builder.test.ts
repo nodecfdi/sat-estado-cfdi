@@ -1,4 +1,5 @@
-import { CfdiStatusBuilder } from '~/utils/cfdi-status-builder';
+import { CfdiStatusBuilder } from 'src/utils/cfdi-status-builder';
+
 describe('Cfdi status Builder', () => {
     it('Create using empty response', () => {
         const builder = new CfdiStatusBuilder('', '', '', '', '');

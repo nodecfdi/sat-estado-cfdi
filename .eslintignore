@@ -1,6 +1,9 @@
 node_modules
+coverage
 dist
 docs
-examples
-coverage
-web_modules
+temp
+
+# Config files
+tsup.config.ts
+vitest.config.ts

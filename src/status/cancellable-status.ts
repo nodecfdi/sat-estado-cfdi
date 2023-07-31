@@ -1,10 +1,7 @@
 import { Status } from './enums/cancellable-status';
-class CancellableStatus {
-    private current: Status;
 
-    constructor(status: Status) {
-        this.current = status;
-    }
+class CancellableStatus {
+    constructor(private readonly current: Status) {}
 
     public cancellableByDirectCall(): boolean {
         return this.current === Status.CancellableByDirectCall;
@@ -19,4 +16,6 @@ class CancellableStatus {
     }
 }
 
-export { CancellableStatus, Status as CancellableStatusEnum };
+export { CancellableStatus };
+
+export { Status as CancellableStatusEnum } from './enums/cancellable-status';

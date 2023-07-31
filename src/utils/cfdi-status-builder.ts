@@ -6,42 +6,17 @@ import { QueryStatus, QueryStatusEnum } from '../status/query-status';
 import { CfdiStatus } from '../cfdi-status';
 
 export class CfdiStatusBuilder {
-    private codigoEstatus: string;
-
-    private estado: string;
-
-    private esCancelable: string;
-
-    private estatusCancelacion: string;
-
-    private validacionEFOS: string;
-
     /**
      *
      */
     constructor(
-        codigoEstatus: string,
-        estado: string,
-        esCancelable: string,
-        estatusCacelacion: string,
-        validacionEfos: string
-    ) {
-        this.codigoEstatus = codigoEstatus;
-        this.estado = estado;
-        this.esCancelable = esCancelable;
-        this.estatusCancelacion = estatusCacelacion;
-        this.validacionEFOS = validacionEfos;
-    }
-
-    public create(): CfdiStatus {
-        return new CfdiStatus(
-            this.createQueryStatus(),
-            this.createDocumentSatus(),
-            this.createCancellableStatus(),
-            this.createCancellationStatus(),
-            this.createEfosStatus()
-        );
-    }
+        private readonly codigoEstatus: string,
+        private readonly estado: string,
+        private readonly esCancelable: string,
+        private readonly estatusCancelacion: string,
+        private readonly validacionEFOS: string,
+        private readonly rawResponse: Record<string, string | null>,
+    ) {}
 
     public createQueryStatus(): QueryStatus {
         // S - Comprobante obtenido satisfactoriamente
@@ -55,10 +30,11 @@ export class CfdiStatusBuilder {
     }
 
     public createDocumentSatus(): DocumentStatus {
-        if ('Vigente' === this.estado) {
+        if (this.estado === 'Vigente') {
             return new DocumentStatus(DocumentStatusEnum.Active);
         }
-        if ('Cancelado' === this.estado) {
+
+        if (this.estado === 'Cancelado') {
             return new DocumentStatus(DocumentStatusEnum.Canceled);
         }
 
@@ -67,10 +43,11 @@ export class CfdiStatusBuilder {
     }
 
     public createCancellableStatus(): CancellableStatus {
-        if ('Cancelable sin aceptación' === this.esCancelable) {
+        if (this.esCancelable === 'Cancelable sin aceptación') {
             return new CancellableStatus(CancellableStatusEnum.CancellableByDirectCall);
         }
-        if ('Cancelable con aceptación' === this.esCancelable) {
+
+        if (this.esCancelable === 'Cancelable con aceptación') {
             return new CancellableStatus(CancellableStatusEnum.CancellableByApproval);
         }
 
@@ -79,19 +56,23 @@ export class CfdiStatusBuilder {
     }
 
     public createCancellationStatus(): CancellationStatus {
-        if ('Cancelado sin aceptación' === this.estatusCancelacion) {
+        if (this.estatusCancelacion === 'Cancelado sin aceptación') {
             return new CancellationStatus(CancellationStatusEnum.CancelledByDirectCall);
         }
-        if ('Plazo vencido' === this.estatusCancelacion) {
+
+        if (this.estatusCancelacion === 'Plazo vencido') {
             return new CancellationStatus(CancellationStatusEnum.CancelledByExpiration);
         }
-        if ('Cancelado con aceptación' === this.estatusCancelacion) {
+
+        if (this.estatusCancelacion === 'Cancelado con aceptación') {
             return new CancellationStatus(CancellationStatusEnum.CancelledByApproval);
         }
-        if ('En proceso' === this.estatusCancelacion) {
+
+        if (this.estatusCancelacion === 'En proceso') {
             return new CancellationStatus(CancellationStatusEnum.Pending);
         }
-        if ('Solicitud rechazada' === this.estatusCancelacion) {
+
+        if (this.estatusCancelacion === 'Solicitud rechazada') {
             return new CancellationStatus(CancellationStatusEnum.Disapproved);
         }
 
@@ -100,10 +81,21 @@ export class CfdiStatusBuilder {
     }
 
     public createEfosStatus(): EfosStatus {
-        if ('200' === this.validacionEFOS) {
+        if (this.validacionEFOS === '200') {
             return new EfosStatus(EfosStatusEnum.Excluded);
         }
 
         return new EfosStatus(EfosStatusEnum.Included);
+    }
+
+    public create(): CfdiStatus {
+        return new CfdiStatus(
+            this.createQueryStatus(),
+            this.createDocumentSatus(),
+            this.createCancellableStatus(),
+            this.createCancellationStatus(),
+            this.createEfosStatus(),
+            this.rawResponse,
+        );
     }
 }

@@ -33,14 +33,30 @@ La documentación del proyecto está en español porque ese es el lenguaje de lo
 
 ## Instalación
 
-```shell
+NPM
+
+```bash
 npm i @nodecfdi/sat-estado-cfdi --save
 ```
 
-o
+YARN
 
-```shell
+```bash
 yarn add @nodecfdi/sat-estado-cfdi
+```
+
+PNPM
+
+```bash
+pnpm add @nodecfdi/sat-estado-cfdi
+```
+
+CDN - Browser
+
+Usa la versión mas reciente publicada cambiando `<latest-version>` por la última version. Ex. ...sat-estado-cfdi@2.0.3/dist...
+
+```html
+<script src="https://unpkg.com/@nodecfdi/sat-estado-cfdi@<latest-version>/dist/sat-estado-cfdi.global.js"></script>
 ```
 
 ## Ejemplo básico de uso
@@ -61,6 +77,9 @@ const cfdiStatusAsync = await consumer.executeAsync('...expression');
 if (cfdiStatus.getCancellable().notCancellable()) {
     console.log('CFDI no es cancelable');
 }
+
+// si quieres ver toda la respuesta
+console.log(cfdiStatus.getRawResponse());
 ```
 
 ### Expresiones (input)
@@ -178,7 +197,7 @@ The `@nodecfdi/sat-estado-cfdi` library is copyright © [NodeCfdi](https://githu
 [badge-discord]: https://img.shields.io/discord/459860554090283019?logo=discord
 [badge-release]: https://img.shields.io/npm/v/@nodecfdi/sat-estado-cfdi.svg?logo=npm
 [badge-license]: https://img.shields.io/github/license/nodecfdi/sat-estado-cfdi.svg?logo=open-source-initiative
-[badge-build]: https://img.shields.io/github/workflow/status/nodecfdi/sat-estado-cfdi/build/main?logo=github-actions
+[badge-build]: https://img.shields.io/github/actions/workflow/status/nodecfdi/sat-estado-cfdi/build.yml?branch=main
 [badge-reliability]: https://sonarcloud.io/api/project_badges/measure?project=nodecfdi_sat-estado-cfdi&metric=reliability_rating
 [badge-maintainability]: https://sonarcloud.io/api/project_badges/measure?project=nodecfdi_sat-estado-cfdi&metric=sqale_rating
 [badge-coverage]: https://img.shields.io/sonar/coverage/nodecfdi_sat-estado-cfdi/main?logo=sonarcloud&server=https%3A%2F%2Fsonarcloud.io

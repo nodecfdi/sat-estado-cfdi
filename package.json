@@ -1,6 +1,6 @@
 {
     "name": "@nodecfdi/sat-estado-cfdi",
-    "version": "2.0.2",
+    "version": "2.1.0",
     "description": "Consulta el estado de un cfdi en el webservice del SAT",
     "keywords": [
         "SAT",
@@ -13,33 +13,36 @@
     "author": "OcelotlStudio <contacto@ocelotlstudio.com>",
     "license": "MIT",
     "type": "module",
-    "main": "./dist/prod/sat-estado-cfdi.cjs",
-    "module": "./dist/prod/sat-estado-cfdi.modern.js",
-    "unpkg": "./dist/prod/sat-estado-cfdi.umd.js",
+    "main": "./dist/sat-estado-cfdi.cjs",
+    "module": "./dist/sat-estado-cfdi.js",
+    "unpkg": "./dist/sat-estado-cfdi.global.js",
+    "browser": "./dist/sat-estado-cfdi.global.js",
+    "types": "./dist/index.d.ts",
     "exports": {
-        "require": "./dist/prod/sat-estado-cfdi.cjs",
-        "development": "./dist/dev/sat-estado-cfdi.modern.js",
-        "default": "./dist/prod/sat-estado-cfdi.modern.js"
+        ".": {
+            "import": {
+                "types": "./dist/index.d.ts",
+                "default": "./dist/sat-estado-cfdi.js"
+            },
+            "require": {
+                "types": "./dist/index.d.cts",
+                "default": "./dist/sat-estado-cfdi.cjs"
+            }
+        }
     },
-    "types": "dist/types/index.d.ts",
     "files": [
         "dist"
     ],
     "scripts": {
-        "lint": "eslint --fix \"src/**/\"",
-        "lint:check": "eslint \"src/**/\"",
-        "lint:ci": "pnpm lint:check",
-        "test": "jest --verbose --runInBand --coverage",
-        "test:watch": "jest --watch",
-        "test:ci": "jest --runInBand --ci",
-        "test:ci:coverage": "jest --runInBand --ci --coverage --coverageDirectory=coverage",
-        "build:prod": "cross-env NODE_ENV=production microbundle --tsconfig ./tsconfig.json --format modern,cjs,umd --output dist/prod/sat-estado-cfdi.js",
-        "build:dev": "cross-env NODE_ENV=development microbundle --define process.env.NODE_ENV=development --tsconfig ./tsconfig.json --generateTypes false --format modern --output dist/dev/sat-estado-cfdi.js",
-        "build": "rm -rf ./dist && pnpm build:dev && pnpm build:prod",
-        "gen:docs": "rm -rf ./docs && typedoc --options typedoc.cjs",
-        "prepublishOnly": "pnpm build",
-        "prepare": "husky install",
-        "release": "pnpm run prepublishOnly && pnpm changeset publish"
+        "prepare": "is-ci || husky install",
+        "lint": "eslint . --fix --ext .ts,.js",
+        "lint:check": "eslint . --ext .ts,.js",
+        "test": "vitest",
+        "test:run": "vitest run",
+        "test:coverage": "vitest run --coverage",
+        "build": "rimraf dist && tsup",
+        "gen:docs": "rimraf docs && typedoc --options typedoc.json",
+        "release": "pnpm run build && pnpm changeset publish"
     },
     "repository": "https://github.com/nodecfdi/sat-estado-cfdi",
     "bugs": {
@@ -47,40 +50,41 @@
     },
     "homepage": "https://github.com/nodecfdi/sat-estado-cfdi",
     "devDependencies": {
-        "@babel/core": "^7.18.9",
-        "@babel/preset-env": "^7.18.9",
-        "@babel/preset-typescript": "^7.18.6",
-        "@changesets/cli": "^2.23.2",
-        "@commitlint/cli": "^17.0.3",
-        "@commitlint/config-conventional": "^17.0.3",
-        "@types/jest": "^28.1.6",
-        "@types/node": "^18.0.6",
-        "@typescript-eslint/eslint-plugin": "^5.30.7",
-        "@typescript-eslint/parser": "^5.30.7",
-        "babel-plugin-dev-expression": "^0.2.3",
-        "babel-plugin-transform-define": "^2.0.1",
-        "cross-env": "^7.0.3",
-        "eslint": "^8.20.0",
-        "eslint-config-prettier": "^8.5.0",
-        "eslint-plugin-jest": "^26.6.0",
-        "eslint-plugin-prettier": "^4.2.1",
-        "eslint-plugin-promise": "^6.0.0",
-        "eslint-plugin-tsdoc": "^0.2.16",
-        "husky": "^8.0.1",
-        "jest": "^28.1.3",
-        "jest-mock-console": "^2.0.0",
-        "jest-watch-typeahead": "^2.0.0",
-        "lint-staged": "^13.0.3",
-        "microbundle": "^0.15.0",
-        "prettier": "^2.7.1",
-        "shx": "^0.3.4",
-        "typedoc": "^0.23.8",
-        "typedoc-theme-hierarchy": "^3.0.0",
-        "typescript": "^4.7.4",
-        "zx": "^7.0.7"
+        "@changesets/cli": "^2.26.2",
+        "@commitlint/cli": "^17.6.7",
+        "@nodecfdi/eslint-config-nodecfdi": "^0.1.5",
+        "@nrsk/config-conventional": "^1.0.0",
+        "@types/is-ci": "^3.0.0",
+        "@types/node": "^20.4.2",
+        "@vitest/coverage-istanbul": "^0.33.0",
+        "eslint": "^8.45.0",
+        "husky": "^8.0.3",
+        "is-ci": "^3.0.1",
+        "lint-staged": "^13.2.3",
+        "prettier": "^3.0.0",
+        "rimraf": "^5.0.1",
+        "tsup": "^7.1.0",
+        "typedoc": "^0.24.8",
+        "typedoc-theme-hierarchy": "^4.0.0",
+        "typescript": "^5.1.6",
+        "vite": "^4.4.5",
+        "vitest": "^0.33.0"
+    },
+    "commitlint": {
+        "extends": [
+            "@nrsk/config-conventional"
+        ]
+    },
+    "lint-staged": {
+        "*.{json}": [
+            "prettier --write"
+        ],
+        "*.{js,ts}": [
+            "eslint --fix"
+        ]
     },
     "engines": {
-        "node": ">= 12.0.0"
+        "node": ">= 16"
     },
     "browserslist": [
         "defaults",
