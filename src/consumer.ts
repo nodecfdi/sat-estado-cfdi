@@ -42,6 +42,7 @@ export class Consumer {
             responseConsumer.get('EsCancelable'),
             responseConsumer.get('EstatusCancelacion'),
             responseConsumer.get('ValidacionEFOS'),
+            responseConsumer.raw(),
         );
 
         return builder.create();
@@ -56,6 +57,7 @@ export class Consumer {
             responseConsumer.get('EsCancelable'),
             responseConsumer.get('EstatusCancelacion'),
             responseConsumer.get('ValidacionEFOS'),
+            responseConsumer.raw(),
         );
 
         return builder.create();

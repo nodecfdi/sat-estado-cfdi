@@ -15,6 +15,7 @@ export class CfdiStatusBuilder {
         private readonly esCancelable: string,
         private readonly estatusCancelacion: string,
         private readonly validacionEFOS: string,
+        private readonly rawResponse: Record<string, string | null>,
     ) {}
 
     public createQueryStatus(): QueryStatus {
@@ -94,6 +95,7 @@ export class CfdiStatusBuilder {
             this.createCancellableStatus(),
             this.createCancellationStatus(),
             this.createEfosStatus(),
+            this.rawResponse,
         );
     }
 }

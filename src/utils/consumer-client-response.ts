@@ -10,4 +10,8 @@ export class ConsumerClientResponse implements ConsumerClientResponseInterface {
     public get(keyword: string): string {
         return this.map[keyword] ?? '';
     }
+
+    public raw(): Record<string, string | null> {
+        return this.map;
+    }
 }

@@ -28,5 +28,6 @@ describe('Consumer test', () => {
         expect(response.getCancellable().cancellableByApproval()).toBe(true);
         expect(response.getCancellation().isPending()).toBe(true);
         expect(response.getEfos().isExcluded()).toBe(true);
+        expect(response.getRawResponse()).toBe(fakeInput);
     }, 1000);
 });

@@ -14,6 +14,7 @@ export class CfdiStatus {
         private readonly cancellable: CancellableStatus,
         private readonly cancellation: CancellationStatus,
         private readonly efos: EfosStatus,
+        private readonly rawResponse: Record<string, string | null>,
     ) {}
 
     public getQuery(): QueryStatus {
@@ -34,5 +35,9 @@ export class CfdiStatus {
 
     public getEfos(): EfosStatus {
         return this.efos;
+    }
+
+    public getRawResponse(): Record<string, string | null> {
+        return this.rawResponse;
     }
 }
