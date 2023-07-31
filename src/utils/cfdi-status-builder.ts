@@ -21,7 +21,7 @@ export class CfdiStatusBuilder {
     public createQueryStatus(): QueryStatus {
         // S - Comprobante obtenido satisfactoriamente
         const check = /S - /.exec(this.codigoEstatus);
-        if (check && check[0]) {
+        if (check?.[0]) {
             return new QueryStatus(QueryStatusEnum.Found);
         }
 

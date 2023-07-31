@@ -1,6 +1,6 @@
 {
     "name": "@nodecfdi/sat-estado-cfdi",
-    "version": "2.1.0",
+    "version": "2.1.1",
     "description": "Consulta el estado de un cfdi en el webservice del SAT",
     "keywords": [
         "SAT",

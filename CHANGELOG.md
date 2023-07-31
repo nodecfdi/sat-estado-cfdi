@@ -1,8 +1,14 @@
 # @nodecfdi/sat-estado-cfdi ChangeLog
 
+## 2.1.1
+
+### fix sonar lint error
+
+- fix sonar lint error
+
 ## 2.1.0
 
-### Minor Changes
+### Refactor lint and added method to see raw response
 
 - Refactor lint and added method to see raw response
 - Added method `CfdiStatus.getRawResponse()``
