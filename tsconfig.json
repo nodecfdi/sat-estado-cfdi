@@ -1,0 +1,6 @@
+{
+  "extends": "@nodecfdi/tsconfig/tsconfig.package.json",
+  "compilerOptions": {
+    "types": ["vitest/globals", "@types/node"]
+  }
+}
