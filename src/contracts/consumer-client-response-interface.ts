@@ -1,14 +1,14 @@
 export interface ConsumerClientResponseInterface {
-    /**
-     * Store a pair of keyword value
-     */
-    set(input: Record<string, string>): void;
+  /**
+   * Store a pair of keyword value
+   */
+  set(input: Record<string, string>): void;
 
-    /**
-     * Retrieve a value from a given keyword
-     * This method sould not throw any exception, if keyword was not set previously it must return an empty string
-     */
-    get(keyword: string): string;
+  /**
+   * Retrieve a value from a given keyword
+   * This method sould not throw any exception, if keyword was not set previously it must return an empty string
+   */
+  get(keyword: string): string;
 
-    raw(): Record<string, string | null>;
+  raw(): Record<string, string | null>;
 }

@@ -1,4 +1,4 @@
 export enum Status {
-    Found,
-    NotFound,
+  Found,
+  NotFound,
 }
