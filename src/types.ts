@@ -1,3 +1,5 @@
+export type CfdiStatusRawResponse = Record<string, string | null | undefined>;
+
 export interface ConsumerClientResponseInterface {
   /**
    * Retrieve a value from a given keyword
@@ -6,9 +8,13 @@ export interface ConsumerClientResponseInterface {
    */
   get(keyword: string): string;
 
-  raw(): Record<string, string | null>;
+  raw(): CfdiStatusRawResponse;
 }
 
 export interface ConsumerClientInterface {
   consume(uri: string, expression: string): Promise<ConsumerClientResponseInterface>;
 }
+
+export type OmitPrototype<T> = { [K in keyof T as K extends 'prototype' ? never : K]: T[K] };
+
+export type EnumLike<T> = T[keyof OmitPrototype<T>];
