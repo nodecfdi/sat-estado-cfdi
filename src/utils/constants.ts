@@ -1,3 +1,4 @@
+/* eslint-disable sonarjs/no-clear-text-protocols */
 const Constants = {
   WebServiceUriProduction:
     'https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc',
