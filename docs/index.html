@@ -160,8 +160,8 @@
 <a href="https://www.npmjs.com/package/@nodecfdi/sat-estado-cfdi" target="_blank" class="external"><img src="https://img.shields.io/node/v/@nodecfdi/sat-estado-cfdi.svg?logo=nodedotjs" alt="Npm Node Version Support"></a>
 <a href="https://discord.gg/AsqX8fkW2k" target="_blank" class="external"><img src="https://img.shields.io/discord/459860554090283019?logo=discord" alt="Discord"></a>
 <a href="https://www.npmjs.com/package/@nodecfdi/sat-estado-cfdi" target="_blank" class="external"><img src="https://img.shields.io/npm/v/@nodecfdi/sat-estado-cfdi.svg?logo=npm" alt="Latest Version"></a>
-<a href="https://github.com/nodecfdi/sat-estado-cfdi/blob/main/LICENSE" target="_blank" class="external"><img src="https://img.shields.io/github/license/nodecfdi/sat-estado-cfdi.svg?logo=open-source-initiative" alt="Software License"></a>
-<a href="https://github.com/nodecfdi/sat-estado-cfdi/actions/workflows/build.yml?query=branch:main" target="_blank" class="external"><img src="https://img.shields.io/github/actions/workflow/status/nodecfdi/sat-estado-cfdi/build.yml?branch=main" alt="Build Status"></a>
+<a href="https://github.com/nodecfdi/sat-estado-cfdi/blob/main/LICENSE.md" target="_blank" class="external"><img src="https://img.shields.io/github/license/nodecfdi/sat-estado-cfdi.svg?logo=open-source-initiative" alt="Software License"></a>
+<a href="https://github.com/nodecfdi/sat-estado-cfdi/actions/workflows/build.yml?query=branch:main" target="_blank" class="external"><img src="https://img.shields.io/github/actions/workflow/status/nodecfdi/sat-estado-cfdi/build.yml?branch=main&amp;logo=github-actions" alt="Build Status"></a>
 <a href="https://sonarcloud.io/component_measures?id=nodecfdi_sat-estado-cfdi&amp;metric=Reliability" target="_blank" class="external"><img src="https://sonarcloud.io/api/project_badges/measure?project=nodecfdi_sat-estado-cfdi&amp;metric=reliability_rating" alt="Reliability"></a>
 <a href="https://sonarcloud.io/component_measures?id=nodecfdi_sat-estado-cfdi&amp;metric=Maintainability" target="_blank" class="external"><img src="https://sonarcloud.io/api/project_badges/measure?project=nodecfdi_sat-estado-cfdi&amp;metric=sqale_rating" alt="Maintainability"></a>
 <a href="https://sonarcloud.io/component_measures?id=nodecfdi_sat-estado-cfdi&amp;metric=Coverage" target="_blank" class="external"><img src="https://img.shields.io/sonar/coverage/nodecfdi_sat-estado-cfdi/main?logo=sonarcloud&amp;server=https%3A%2F%2Fsonarcloud.io" alt="Code Coverage"></a>
@@ -172,182 +172,25 @@
 </blockquote>
 <p>:us: The documentation of this project is in spanish as this is the natural language for intented audience.</p>
 <p>:mexico: La documentación del proyecto está en español porque ese es el lenguaje principal de los usuarios.</p>
-<a id="md:acerca-de-nodecfdisat-estado-cfdi" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Acerca de <code>@nodecfdi/sat-estado-cfdi</code><a href="#md:acerca-de-nodecfdisat-estado-cfdi" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Esta librería contiene objetos de ayuda para consumir el <strong>Servicio de Consulta de CFDI del SAT</strong>.
-La documentación del proyecto está en español porque ese es el lenguaje de los usuarios que la utilizarán. Esta librería está inspirada en: <a href="https://github.com/phpcfdi/sat-estado-cfdi/" target="_blank" class="external">https://github.com/phpcfdi/sat-estado-cfdi/</a></p>
+<a id="md:acerca-de-nodecfdisat-estado-cfdi" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Acerca de <code>@nodecfdi/sat-estado-cfdi</code><a href="#md:acerca-de-nodecfdisat-estado-cfdi" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Esta librería contiene objetos de ayuda para consumir el <strong>Servicio de Consulta de CFDI del SAT</strong>. Esta librería solo permite verificar el estado de un CFDI Regular y no de CFDI de Retenciones e información de pagos.</p>
+<p>Esta librería está inspirada en: <a href="https://github.com/phpcfdi/sat-estado-cfdi/" target="_blank" class="external">https://github.com/phpcfdi/sat-estado-cfdi/</a></p>
 <p><strong>Servicio de Consulta de CFDI del SAT</strong>:</p>
 <ul>
 <li>Servicio productivo: <a href="https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc" target="_blank" class="external">https://consultaqr.facturaelectronica.sat.gob.mx/ConsultaCFDIService.svc</a></li>
 <li>Servicio de pruebas: <a href="https://pruebacfdiconsultaqr.cloudapp.net/ConsultaCFDIService.svc" target="_blank" class="external">https://pruebacfdiconsultaqr.cloudapp.net/ConsultaCFDIService.svc</a></li>
 <li>SAT: <a href="https://www.sat.gob.mx/consultas/20585/conoce-los-servicios-especializados-de-validacion" target="_blank" class="external">https://www.sat.gob.mx/consultas/20585/conoce-los-servicios-especializados-de-validacion</a></li>
-<li>Documentación del Servicio de Consulta de CFDIVersión 1.3 (2020-11-18):
-<a href="https://www.sat.gob.mx/cs/Satellite?blobcol=urldata&amp;blobkey=id&amp;blobtable=MungoBlobs&amp;blobwhere=1579314559300&amp;ssbinary=true" target="_blank" class="external">https://www.sat.gob.mx/cs/Satellite?blobcol=urldata&amp;blobkey=id&amp;blobtable=MungoBlobs&amp;blobwhere=1579314559300&amp;ssbinary=true</a></li>
+<li>Documentación del Servicio de Consulta de CFDIVersión 1.4 (noviembre 2022):
+<a href="https://www.sat.gob.mx/cs/Satellite?blobcol=urldata&amp;blobkey=id&amp;blobtable=MungoBlobs&amp;blobwhere=1461175223997&amp;ssbinary=true" target="_blank" class="external">https://www.sat.gob.mx/cs/Satellite?blobcol=urldata&amp;blobkey=id&amp;blobtable=MungoBlobs&amp;blobwhere=1461175223997&amp;ssbinary=true</a></li>
 </ul>
-<a id="md:instalación" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Instalación<a href="#md:instalación" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>NPM</p>
-<pre><code class="bash"><span class="hl-0">npm</span><span class="hl-1"> </span><span class="hl-2">i</span><span class="hl-1"> </span><span class="hl-2">@nodecfdi/sat-estado-cfdi</span><span class="hl-1"> </span><span class="hl-3">--save</span>
-</code><button type="button">Copy</button></pre>
-
-<p>YARN</p>
-<pre><code class="bash"><span class="hl-0">yarn</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">@nodecfdi/sat-estado-cfdi</span>
-</code><button type="button">Copy</button></pre>
-
-<p>PNPM</p>
-<pre><code class="bash"><span class="hl-0">pnpm</span><span class="hl-1"> </span><span class="hl-2">add</span><span class="hl-1"> </span><span class="hl-2">@nodecfdi/sat-estado-cfdi</span>
-</code><button type="button">Copy</button></pre>
-
-<p>CDN - Browser</p>
-<p>Usa la versión mas reciente publicada cambiando <code>&lt;latest-version&gt;</code> por la última version. Ex. ...sat-estado-cfdi@2.0.3/dist...</p>
-<pre><code class="html"><span class="hl-4">&lt;</span><span class="hl-5">script</span><span class="hl-6"> </span><span class="hl-7">src</span><span class="hl-6">=</span><span class="hl-8">&quot;https://unpkg.com/@nodecfdi/sat-estado-cfdi@&lt;latest-version&gt;/dist/sat-estado-cfdi.global.js&quot;</span><span class="hl-4">&gt;&lt;/</span><span class="hl-5">script</span><span class="hl-4">&gt;</span>
-</code><button type="button">Copy</button></pre>
-
-<a id="md:ejemplo-básico-de-uso" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Ejemplo básico de uso<a href="#md:ejemplo-básico-de-uso" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><pre><code class="ts"><span class="hl-9">import</span><span class="hl-1"> { </span><span class="hl-10">ConsumerClientInterface</span><span class="hl-1">, </span><span class="hl-10">Consumer</span><span class="hl-1"> } </span><span class="hl-9">from</span><span class="hl-1"> </span><span class="hl-2">&#39;@nodecfdi/sat-estado-cfdi&#39;</span><span class="hl-1">;</span><br/><br/><span class="hl-11">//el cliente debe implementar ConsumerClientInterface</span><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-12">client</span><span class="hl-1"> = </span><span class="hl-3">new</span><span class="hl-1"> </span><span class="hl-0">Client</span><span class="hl-1">();</span><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-12">consumer</span><span class="hl-1"> = </span><span class="hl-3">new</span><span class="hl-1"> </span><span class="hl-0">Consumer</span><span class="hl-1">(</span><span class="hl-10">client</span><span class="hl-1">);</span><br/><br/><span class="hl-11">// para clientes síncronos el consumer debe tener la opción de hacer llamadas síncronas</span><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-12">cfdiStatus</span><span class="hl-1"> = </span><span class="hl-10">consumer</span><span class="hl-1">.</span><span class="hl-0">execute</span><span class="hl-1">(</span><span class="hl-2">&#39;...expression&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-11">//si tu cliente es asíncrono usa executeAsync</span><br/><span class="hl-3">const</span><span class="hl-1"> </span><span class="hl-12">cfdiStatusAsync</span><span class="hl-1"> = </span><span class="hl-9">await</span><span class="hl-1"> </span><span class="hl-10">consumer</span><span class="hl-1">.</span><span class="hl-0">executeAsync</span><span class="hl-1">(</span><span class="hl-2">&#39;...expression&#39;</span><span class="hl-1">);</span><br/><br/><span class="hl-9">if</span><span class="hl-1"> (</span><span class="hl-10">cfdiStatus</span><span class="hl-1">.</span><span class="hl-0">getCancellable</span><span class="hl-1">().</span><span class="hl-0">notCancellable</span><span class="hl-1">()) {</span><br/><span class="hl-1">  </span><span class="hl-10">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-2">&#39;CFDI no es cancelable&#39;</span><span class="hl-1">);</span><br/><span class="hl-1">}</span><br/><br/><span class="hl-11">// si quieres ver toda la respuesta</span><br/><span class="hl-10">console</span><span class="hl-1">.</span><span class="hl-0">log</span><span class="hl-1">(</span><span class="hl-10">cfdiStatus</span><span class="hl-1">.</span><span class="hl-0">getRawResponse</span><span class="hl-1">());</span>
-</code><button type="button">Copy</button></pre>
-
-<a id="md:expresiones-input" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Expresiones (input)<a href="#md:expresiones-input" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>El consumidor requiere una expresión para poder consultar.
-La expresión es el texto que viene en el código QR de la representación impresa de un CFDI.</p>
-<p>Las expresiones son diferentes para CFDI 3.2, CFDI 3.3 y RET 1.0.
-Tienen reglas específicas de formato y de la información que debe contener.</p>
-<p>Si no cuentas con la expresión, te recomiendo usar la librería
-<a href="https://github.com/nodecfdi/cfdi-expresiones" target="_blank" class="external"><code>nodecfdi/cfdi-expresiones</code></a>.</p>
-<a id="md:estados-salida" class="tsd-anchor"></a><h3 class="tsd-anchor-link">Estados (salida)<a href="#md:estados-salida" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h3><p>Después de consumir el servicio, se responderá con un objeto <code>CfdiStatus</code> que agrupa de los cuatro estados.</p>
-<p>No compares directamente los valores de los estados, en su lugar utiliza los métodos <code>is*</code>,
-por ejemplo <code>$response-&gt;document()-&gt;isCancelled()</code>.</p>
-<p>Posibles estados:</p>
-<ul>
-<li>
-<p><code>CodigoEstatus</code>: <code>query(): QueryStatus</code>.</p>
-<ul>
-<li><code>found</code>: Si el estado inicia con <code>S -</code>.</li>
-<li><code>notFound</code>: en cualquier otro caso.</li>
-</ul>
-</li>
-<li>
-<p><code>Estado</code>: <code>document(): DocumentStatus</code>.</p>
-<ul>
-<li><code>active</code>: Si el estado reportó <code>Vigente</code>.</li>
-<li><code>cancelled</code>: Si el estado reportó <code>Cancelado</code>.</li>
-<li><code>notFound</code>: en cualquier otro caso.</li>
-</ul>
-</li>
-<li>
-<p><code>EsCancelable</code>: <code>cancellable(): CancellableStatus</code>.</p>
-<ul>
-<li><code>cancellableByDirectCall</code>: Si el estado reportó <code>Cancelable sin aceptación</code>.</li>
-<li><code>cancellableByApproval</code>: Si el estado reportó <code>Cancelable con aceptación</code>.</li>
-<li><code>notCancellable</code>: en cualquier otro caso.</li>
-</ul>
-</li>
-<li>
-<p><code>EstatusCancelacion</code>: <code>cancellation(): CancellationStatus</code>.</p>
-<ul>
-<li><code>cancelledByDirectCall</code>: Si el estado reportó <code>Cancelado sin aceptación</code>.</li>
-<li><code>cancelledByApproval</code>: Si el estado reportó <code>Cancelado con aceptación</code>.</li>
-<li><code>cancelledByExpiration</code>: Si el estado reportó <code>Plazo vencido</code>.</li>
-<li><code>pending</code>: Si el estado reportó <code>En proceso</code>.</li>
-<li><code>disapproved</code>: Si el estado reportó <code>Solicitud rechazada</code>.</li>
-<li><code>undefined</code>: en cualquier otro caso.</li>
-</ul>
-</li>
-<li>
-<p><code>ValidacionEFOS</code>: <code>efos(): EfosStatus</code>.</p>
-<ul>
-<li><code>included</code>: Si el estado no reportó <code>200</code>.</li>
-<li><code>excluded</code>: Si el estado reportó <code>200</code>.</li>
-</ul>
-</li>
-</ul>
-<a id="md:estados-mutuamente-excluyentes" class="tsd-anchor"></a><h4 class="tsd-anchor-link">Estados mutuamente excluyentes<a href="#md:estados-mutuamente-excluyentes" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h4><table>
-<thead>
-<tr>
-<th>CodigoEstatus</th>
-<th>Estado</th>
-<th>EsCancelable</th>
-<th>EstatusCancelacion</th>
-<th>Explicación</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>N - ...</td>
-<td>*</td>
-<td>*</td>
-<td>*</td>
-<td>El SAT no sabe del CFDI con la expresión dada</td>
-</tr>
-<tr>
-<td>S - ...</td>
-<td>Cancelado</td>
-<td>*</td>
-<td>Plazo vencido</td>
-<td>Cancelado por plazo vencido</td>
-</tr>
-<tr>
-<td>S - ...</td>
-<td>Cancelado</td>
-<td>*</td>
-<td>Cancelado con aceptación</td>
-<td>Cancelado con aceptación del receptor</td>
-</tr>
-<tr>
-<td>S - ...</td>
-<td>Cancelado</td>
-<td>*</td>
-<td>Cancelado sin aceptación</td>
-<td>No fue requerido preguntarle al receptor y se canceló</td>
-</tr>
-<tr>
-<td>S - ...</td>
-<td>Vigente</td>
-<td>No cancelable</td>
-<td>*</td>
-<td>No se puede cancelar</td>
-</tr>
-<tr>
-<td>S - ...</td>
-<td>Vigente</td>
-<td>Cancelable sin aceptación</td>
-<td>*</td>
-<td>Se puede cancelar, pero no se ha realizado la cancelación</td>
-</tr>
-<tr>
-<td>S - ...</td>
-<td>Vigente</td>
-<td>Cancelable con aceptación</td>
-<td>(ninguno)</td>
-<td>Se puede cancelar, pero no se ha realizado la solicitud</td>
-</tr>
-<tr>
-<td>S - ...</td>
-<td>Vigente</td>
-<td>Cancelable con aceptación</td>
-<td>En proceso</td>
-<td>Se hizo la solicitud y está en espera de respuesta</td>
-</tr>
-<tr>
-<td>S - ...</td>
-<td>Vigente</td>
-<td>Cancelable con aceptación</td>
-<td>Solicitud rechazada</td>
-<td>Se hizo la solicitud y fue rechazada</td>
-</tr>
-</tbody>
-</table>
-<p>Cuando tienes un CFDI en estado <em>Cancelable con aceptación</em>
-y mandas a hacer la cancelación entonces su estado de cancelación cambiaría a <em>En proceso</em>.</p>
-<p>El receptor puede aceptar la cancelación (<em>Cancelado con aceptación</em>) o rechazarla (<em>Solicitud rechazada</em>).</p>
-<p>Si es la <em>primera vez</em> que se hace la solicitud, el receptor tiene 72 horas para aceptarla o rechazarla,
-si no lo hace entonces automáticamente será cancelada (<em>Plazo vencido</em>).</p>
-<p>Podrías volver a enviar la solicitud de cancelación <em>por segunda vez</em> aun cuando la solicitud fue previamente rechazada.</p>
-<p>En ese caso, el receptor puede aceptar o rechazar la cancelación, pero ya no aplicará un lapzo de 72 horas.
-Por lo anterior entonces podrías tener el CFDI en estado de cancelación <em>en proceso</em> indefinidamente.
-Incluso, que la cancelación suceda meses después de lo esperado.</p>
+<a id="md:documentación" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Documentación<a href="#md:documentación" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>La documentación esta disponible en el sitio web <a href="https://nodecfdi.com/librarys/sat-estado-cfdi/getting-started/" target="_blank" class="external">NodeCfdi</a></p>
 <a id="md:soporte" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Soporte<a href="#md:soporte" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Puedes obtener soporte abriendo un ticket en Github.</p>
 <p>Adicionalmente, esta librería pertenece a la comunidad <a href="https://ocelotlstudio.com" target="_blank" class="external">OcelotlStudio</a>, así que puedes usar los mismos canales de comunicación para obtener ayuda de algún miembro de la comunidad.</p>
 <a id="md:compatibilidad" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Compatibilidad<a href="#md:compatibilidad" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Esta librería se mantendrá compatible con al menos la versión con
 <a href="https://nodejs.org/es/about/releases/" target="_blank" class="external">soporte activo de Node</a> más reciente.</p>
 <p>También utilizamos <a href="https://semver.org/lang/es/" target="_blank" class="external">Versionado Semántico 2.0.0</a> por lo que puedes usar esta librería sin temor a romper tu aplicación.</p>
-<a id="md:contribuciones" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Contribuciones<a href="#md:contribuciones" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Las contribuciones con bienvenidas. Por favor lee <a href="https://github.com/nodecfdi/sat-estado-cfdi/blob/main/CONTRIBUTING.md" target="_blank" class="external">CONTRIBUTING</a> para más detalles y recuerda revisar el archivo <a href="https://github.com/nodecfdi/sat-estado-cfdi/blob/main/CHANGELOG.md" target="_blank" class="external">CHANGELOG</a>.</p>
-<a id="md:copyright-and-license" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Copyright and License<a href="#md:copyright-and-license" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>The <code>@nodecfdi/sat-estado-cfdi</code> library is copyright © <a href="https://github.com/nodecfdi" target="_blank" class="external">NodeCfdi</a> - <a href="https://ocelotlstudio.com" target="_blank" class="external">OcelotlStudio</a> and licensed for use under the MIT License (MIT). Please see <a href="https://github.com/nodecfdi/sat-estado-cfdi/blob/main/LICENSE" target="_blank" class="external">LICENSE</a> for more information.</p>
-</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:nodecfdisat-estado-cfdi"><span>@nodecfdi/sat-<wbr/>estado-<wbr/>cfdi</span></a><ul><li><a href="#md:acerca-de-nodecfdisat-estado-cfdi"><span>Acerca de @nodecfdi/sat-<wbr/>estado-<wbr/>cfdi</span></a></li><li><a href="#md:instalación"><span>Instalación</span></a></li><li><a href="#md:ejemplo-básico-de-uso"><span>Ejemplo básico de uso</span></a></li><li><ul><li><a href="#md:expresiones-input"><span>Expresiones (input)</span></a></li><li><a href="#md:estados-salida"><span>Estados (salida)</span></a></li><li><ul><li><a href="#md:estados-mutuamente-excluyentes"><span>Estados mutuamente excluyentes</span></a></li></ul></li></ul></li><li><a href="#md:soporte"><span>Soporte</span></a></li><li><a href="#md:compatibilidad"><span>Compatibilidad</span></a></li><li><a href="#md:contribuciones"><span>Contribuciones</span></a></li><li><a href="#md:copyright-and-license"><span>Copyright and <wbr/>License</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>@nodecfdi/sat-estado-cfdi</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div><script>
+<a id="md:contribuciones" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Contribuciones<a href="#md:contribuciones" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>Las contribuciones con bienvenidas. Por favor lee <a href="https://github.com/nodecfdi/.github/blob/main/docs/CONTRIBUTING.md" target="_blank" class="external">CONTRIBUTING</a> para más detalles y recuerda revisar el archivo <a href="https://github.com/nodecfdi/sat-estado-cfdi/blob/main/CHANGELOG.md" target="_blank" class="external">CHANGELOG</a>.</p>
+<a id="md:copyright-and-license" class="tsd-anchor"></a><h2 class="tsd-anchor-link">Copyright and License<a href="#md:copyright-and-license" aria-label="Permalink" class="tsd-anchor-icon"><svg viewBox="0 0 24 24"><use href="assets/icons.svg#icon-anchor"></use></svg></a></h2><p>The <code>@nodecfdi/sat-estado-cfdi</code> library is copyright © <a href="https://github.com/nodecfdi" target="_blank" class="external">NodeCfdi</a> - <a href="https://ocelotlstudio.com" target="_blank" class="external">OcelotlStudio</a> and licensed for use under the MIT License (MIT). Please see <a href="https://github.com/nodecfdi/sat-estado-cfdi/blob/main/LICENSE.md" target="_blank" class="external">LICENSE</a> for more information.</p>
+</div></div><div class="col-sidebar"><div class="page-menu"><div class="tsd-navigation settings"><details class="tsd-accordion"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>Settings</h3></summary><div class="tsd-accordion-details"><div class="tsd-filter-visibility"><span class="settings-label">Member Visibility</span><ul id="tsd-filter-options"><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-protected" name="protected"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Protected</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-inherited" name="inherited" checked/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>Inherited</span></label></li><li class="tsd-filter-item"><label class="tsd-filter-input"><input type="checkbox" id="tsd-filter-external" name="external"/><svg width="32" height="32" viewBox="0 0 32 32" aria-hidden="true"><rect class="tsd-checkbox-background" width="30" height="30" x="1" y="1" rx="6" fill="none"></rect><path class="tsd-checkbox-checkmark" d="M8.35422 16.8214L13.2143 21.75L24.6458 10.25" stroke="none" stroke-width="3.5" stroke-linejoin="round" fill="none"></path></svg><span>External</span></label></li></ul></div><div class="tsd-theme-toggle"><label class="settings-label" for="tsd-theme">Theme</label><select id="tsd-theme"><option value="os">OS</option><option value="light">Light</option><option value="dark">Dark</option></select></div></div></details></div><details open class="tsd-accordion tsd-page-navigation"><summary class="tsd-accordion-summary"><h3><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><use href="assets/icons.svg#icon-chevronDown"></use></svg>On This Page</h3></summary><div class="tsd-accordion-details"><a href="#md:nodecfdisat-estado-cfdi"><span>@nodecfdi/sat-<wbr/>estado-<wbr/>cfdi</span></a><ul><li><a href="#md:acerca-de-nodecfdisat-estado-cfdi"><span>Acerca de @nodecfdi/sat-<wbr/>estado-<wbr/>cfdi</span></a></li><li><a href="#md:documentación"><span>Documentación</span></a></li><li><a href="#md:soporte"><span>Soporte</span></a></li><li><a href="#md:compatibilidad"><span>Compatibilidad</span></a></li><li><a href="#md:contribuciones"><span>Contribuciones</span></a></li><li><a href="#md:copyright-and-license"><span>Copyright and <wbr/>License</span></a></li></ul></div></details></div><div class="site-menu"><nav class="tsd-navigation"><a href="modules.html" class="current"><svg class="tsd-kind-icon" viewBox="0 0 24 24"><use href="assets/icons.svg#icon-1"></use></svg><span>@nodecfdi/sat-estado-cfdi</span></a><ul class="tsd-small-nested-navigation" id="tsd-nav-container" data-base="."><li>Loading...</li></ul></nav></div></div></div><footer><p class="tsd-generator">Generated using <a href="https://typedoc.org/" target="_blank">TypeDoc</a></p></footer><div class="overlay"></div><script>
           try {
             const generateLinkElement = document.querySelector(".tsd-generator a");
             const link = document.createElement("a");
