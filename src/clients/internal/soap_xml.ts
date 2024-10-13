@@ -56,6 +56,6 @@ export default class SoapXml {
   private obtainFirstElement(document: Document, elementName: string): Element | undefined {
     const elements = document.getElementsByTagNameNS(Constants.XmlnsSoapUri, elementName);
 
-    return elements.length === 0 ? undefined : (elements.item(0) ?? undefined);
+    return elements.item(0) ?? undefined;
   }
 }
