@@ -120,7 +120,10 @@
   "tshy": {
     "selfLink": false,
     "exports": {
-      ".": "./src/index.ts"
+      ".": "./src/index.ts",
+      "./types": "./src/types.ts",
+      "./clients/fetch": "./src/clients/fetch_consumer_client.ts",
+      "./clients/axios": "./src/clients/axios_consumer_client.ts"
     }
   }
 }

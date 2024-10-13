@@ -4,7 +4,7 @@ import { type ConsumerClientInterface, type ConsumerClientResponseInterface } fr
 import Constants from '#src/utils/constants';
 import ConsumerClientResponse from '#src/utils/consumer_client_response';
 
-export default class AxiosConsumerClient implements ConsumerClientInterface {
+export class AxiosConsumerClient implements ConsumerClientInterface {
   private readonly _soapXml: SoapXml;
 
   public constructor() {

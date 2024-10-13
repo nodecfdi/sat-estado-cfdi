@@ -3,7 +3,7 @@ import { type ConsumerClientInterface, type ConsumerClientResponseInterface } fr
 import Constants from '#src/utils/constants';
 import ConsumerClientResponse from '#src/utils/consumer_client_response';
 
-export default class FetchConsumerClient implements ConsumerClientInterface {
+export class FetchConsumerClient implements ConsumerClientInterface {
   private readonly _soapXml: SoapXml;
 
   public constructor() {

@@ -1,6 +1,6 @@
 import { DiscoverExtractor } from '@nodecfdi/cfdi-expresiones';
 import CfdiStatus from '#src/cfdi_status';
-import AxiosConsumerClient from '#src/clients/axios_consumer_client';
+import { AxiosConsumerClient } from '#src/clients/axios_consumer_client';
 import Consumer from '#src/consumer';
 import {
   CancellableStatus,

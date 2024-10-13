@@ -1,6 +1,6 @@
 import { DiscoverExtractor } from '@nodecfdi/cfdi-expresiones';
 import CfdiStatus from '#src/cfdi_status';
-import FetchConsumerClient from '#src/clients/fetch_consumer_client';
+import { FetchConsumerClient } from '#src/clients/fetch_consumer_client';
 import Consumer from '#src/consumer';
 import {
   CancellableStatus,
